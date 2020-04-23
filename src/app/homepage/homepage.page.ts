@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {LoginService} from "../services/login.service";
+import {Observable} from "rxjs";
+import {Storage} from "@ionic/storage";
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.page.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepagePage implements OnInit {
 
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   ngOnInit() {
+    this.storage.get('auth_token').then(val => console.log(val))
   }
+
 
 }
