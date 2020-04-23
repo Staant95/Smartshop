@@ -22,7 +22,7 @@ export class LoginService {
       private http: HttpClient,
       ) { }
 
-  login(credentials: Credentials): Observable<any> {
+    login(credentials: Credentials): Observable<any> {
       //dev'essere POST, ma con json-server usare il post inserirebbe un nuovo utente con le credenziali che passo
       //come parametro alla funzione login
       return this.http.get(URL.login).pipe(
@@ -30,11 +30,12 @@ export class LoginService {
             if(response['token'] && response['token'] !== null) {
               this.token = response['token'];
 
-              this.storage.set('auth_token', this.token);
-              this.storage.set('user', response['name']);
-              this.storage.set('email', response['email']);
-
               this.isLogged$.next(true);
+
+              this.saveToStorage(this.token, response['name'], response['email']);
+
+              
+
 
             } else {
               throw new HttpErrorResponse({status: 401});
@@ -45,6 +46,12 @@ export class LoginService {
 
   isLogged(): Observable<boolean> {
     return this.isLogged$.asObservable();
+  }
+
+  async saveToStorage(token: string, name: string, email: string) {
+      await this.storage.set('auth_token', token);
+      await this.storage.set('name', name);
+      await this.storage.set('email', email);
   }
 
 }

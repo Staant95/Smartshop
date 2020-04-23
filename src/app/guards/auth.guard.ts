@@ -28,8 +28,8 @@ export class AuthGuard implements CanActivate {
     return this.loginService.isLogged().pipe(
         map((isLogged: boolean) => {
           if (!isLogged) {
-              this.redirectUrl.redirectUrl = state.url;
-              this.nav.navigateRoot('login')
+              let path = state.url.replace(/\\/g, '-')
+              this.route.navigate(['/login'], { queryParams: {"redirect" : path}});
               return false;
           }
           return true;

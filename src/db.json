@@ -2,7 +2,7 @@
   "user": [
     {
       "id": 1,
-      "token": "asdqweas",
+      "token": "token",
       "name" : "Stas",
       "email" : "stas@gmail.com",
       "password" : 123
