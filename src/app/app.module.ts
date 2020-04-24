@@ -10,7 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { IonicStorageModule } from "@ionic/storage";
-import { HttpClientModule } from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {TokenInterceptorService} from "./services/token-interceptor.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import { HttpClientModule } from "@angular/common/http";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true},
   ],
   bootstrap: [AppComponent]
 })

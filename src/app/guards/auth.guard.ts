@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import {LoginService} from "../services/login.service";
 import {NavController} from "@ionic/angular";
 import { map } from 'rxjs/operators';
-import {RedirectAfterLoginService} from "../services/redirect-after-login.service";
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +18,7 @@ export class AuthGuard implements CanActivate {
   constructor(
       private loginService: LoginService,
       private nav: NavController,
-      private route: Router,
-      private redirectUrl: RedirectAfterLoginService) {
+      private route: Router) {
   }
   canActivate(
     next: ActivatedRouteSnapshot,

@@ -14,7 +14,7 @@ export interface Credentials {
   providedIn: 'root'
 })
 export class LoginService {
-  private token: string = '';
+  token: string = '';
   isLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
@@ -33,9 +33,6 @@ export class LoginService {
               this.isLogged$.next(true);
 
               this.saveToStorage(this.token, response['name'], response['email']);
-
-              
-
 
             } else {
               throw new HttpErrorResponse({status: 401});
