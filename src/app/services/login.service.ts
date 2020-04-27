@@ -25,30 +25,27 @@ export class LoginService {
     login(credentials: Credentials): Observable<any> {
       //dev'essere POST, ma con json-server usare il post inserirebbe un nuovo utente con le credenziali che passo
       //come parametro alla funzione login
-      return this.http.get(URL.login).pipe(
-        map((response) => {
-            if(response['token'] && response['token'] !== null) {
-              this.token = response['token'];
 
-              this.isLogged$.next(true);
+        return this.http.get(URL.login).pipe(
+            map((response) => {
+                if(response['token'].trim() !== '' && response['token'] !== null) {
 
-              this.saveToStorage(this.token, response['name'], response['email']);
 
-            } else {
-              throw new HttpErrorResponse({status: 401});
-            }
-        })
-    );
+                this.isLogged$.next(true);
+
+
+
+                } else {
+                    throw new HttpErrorResponse({status: 401});
+                }
+            })
+         );
   }
 
   isLogged(): Observable<boolean> {
     return this.isLogged$.asObservable();
   }
 
-  async saveToStorage(token: string, name: string, email: string) {
-      await this.storage.set('auth_token', token);
-      await this.storage.set('name', name);
-      await this.storage.set('email', email);
-  }
+
 
 }
