@@ -3,7 +3,9 @@ import { Storage } from '@ionic/storage';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import { URL } from '../endpoints';
-import { map } from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
+import {StorageService} from "./storage.service";
+import {User} from "../models/user";
 
 export interface Credentials {
   email: string;
@@ -18,8 +20,8 @@ export class LoginService {
   isLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
-      private storage: Storage,
       private http: HttpClient,
+      private storageService: StorageService
       ) { }
 
     login(credentials: Credentials): Observable<any> {
@@ -28,12 +30,12 @@ export class LoginService {
 
         return this.http.get(URL.login).pipe(
             map((response) => {
+
                 if(response['token'].trim() !== '' && response['token'] !== null) {
 
-
-                this.isLogged$.next(true);
-
-
+                    this.storageService.save({...response}).subscribe(
+                        () => this.isLogged$.next(true)
+                    );
 
                 } else {
                     throw new HttpErrorResponse({status: 401});

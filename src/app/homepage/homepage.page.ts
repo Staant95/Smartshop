@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from "../services/login.service";
-import {Observable} from "rxjs";
 import {Storage} from "@ionic/storage";
 import {StorageService} from "../services/storage.service";
 @Component({
@@ -10,11 +8,18 @@ import {StorageService} from "../services/storage.service";
 })
 export class HomepagePage implements OnInit {
   private test;
-  constructor(private storage: Storage, private storageService: StorageService) { }
+  constructor(private storage: Storage,
+              private storageService: StorageService
+  ) { }
+
+  isDisabled;
 
   ngOnInit() {
-    this.storageService.save({"name" : "stas", "age" : 25}).subscribe(console.log)
+    this.storageService.save({"name" : "stas", "age" : 25}).subscribe(console.log);
+
   }
+
+
 
 
 }
