@@ -32,10 +32,13 @@ export class LoginService {
             map((response) => {
 
                 if(response['token'].trim() !== '' && response['token'] !== null) {
+                    //this.storageService.save({...response}).subscribe( _ => this.isLogged$.next(true));
+                    this.storageService.save(
+                        {'name' : response['name'],
+                            'email' : response['email'],
+                            'token' : response['token']
+                        }).subscribe(_ => this.isLogged$.next(true));
 
-                    this.storageService.save({...response}).subscribe(
-                        () => this.isLogged$.next(true)
-                    );
 
                 } else {
                     throw new HttpErrorResponse({status: 401});
