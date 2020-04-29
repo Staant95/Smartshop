@@ -3,20 +3,25 @@
         <ion-avatar slot="start">
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
         </ion-avatar>
-        <ion-text class="ion-padding">Spaghetti <br> Barilla n.5 <br>550g</ion-text>
+        <ion-text class="ion-padding">
+            <div>Spaghetti</div>
+            <div style="color: var(--ion-color-secondary); font-size:0.9em;">barilla n.5</div>
+            <div style="color: var(--ion-color-secondary); font-size:0.9em;">550g</div>
+        </ion-text>
 
         <div slot="end">
-            <div class="ion-text-center">
-                <ion-icon name="chevron-up-outline"></ion-icon>
+            <div class="ion-text-center" style="max-height:1em;">
+                <ion-icon name="chevron-up-outline" style="font-size:1em; color:#888;"></ion-icon>
             </div>
             <div>
-                <ion-label class="ion-text-center" style="font-size:1.8em;">1</ion-label>
+                <ion-label class="ion-text-center" style=" font-size:1.8em; color: var(--ion-color-primary);">1</ion-label>
             </div>
-            <div class="ion-text-center">
-                <ion-icon name="chevron-down-outline"></ion-icon>
+            <div class="ion-text-center" style="max-height:1em; font-size:1em;">
+                <ion-icon name="chevron-down-outline" style="font-size:1em; color:#888;"></ion-icon>
             </div>
         </div>
     </ion-item>
+
 
         <!-- fab placed to the top end -->
         <ion-fab vertical="bottom" horizontal="end" slot="fixed">
