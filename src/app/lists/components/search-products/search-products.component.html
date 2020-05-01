@@ -1,1 +1,70 @@
-<ion-searchbar placeholder="Cerca un prodotto"></ion-searchbar>
+<ion-content>
+    <!--
+    <ion-item lines="none" style="margin-top:1em;">
+        <ion-searchbar placeholder="Cerca un prodotto"></ion-searchbar>
+    </ion-item>
+    <ion-item lines="none">
+        <ion-list>
+            <ion-item lines="none">
+                <ion-icon slot="start" name="reload-outline"  style="transform: scaleX(-1);"></ion-icon>
+                <ion-label color="tertiary">Barilla</ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-item>
+    -->
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-searchbar class="ion-no-margin"></ion-searchbar>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col class="" style="padding-left:0px; padding-right:0.8em;" >
+                <ion-item class="ion-no-margin" lines="">
+                    <ion-icon class="ion-padding-end" name="reload-outline"></ion-icon>
+                    <ion-label color="tertiary">Barilla</ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col class="" style="padding-left:0px; padding-right:0.8em;" >
+                <ion-item class="ion-no-margin" lines="">
+                    <ion-icon class="ion-padding-end" name="search-outline"></ion-icon>
+                    <ion-label color="tertiary">Barilla</ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+            <ion-col class="" style="padding-left:0px; padding-right:0.8em;" >
+                <ion-item class="ion-no-margin" lines="">
+                    <ion-icon class="ion-padding-end" name="reload-outline"></ion-icon>
+                    <ion-label color="tertiary">Barilla</ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col style="padding-left:0px; padding-right:0.8em;">
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-text class="ion-padding">
+                        <div>Spaghetti</div>
+                        <div style="color: var(--ion-color-secondary); font-size:0.9em;">barilla n.5</div>
+                        <div style="color: var(--ion-color-secondary); font-size:0.9em;">550g</div>
+                    </ion-text>
+
+                        <ion-icon name="cart-outline" color="primary" slot="end" style="font-size:2em"></ion-icon>
+
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+</ion-content>
