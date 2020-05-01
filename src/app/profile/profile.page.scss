@@ -1,0 +1,30 @@
+ion-item{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+ion-avatar{
+  width:10em;
+  height:10em;
+}
+
+.username{
+  font-size: 1.5em;
+}
+
+.mail{
+  font-size:1em;
+  color: var(--ion-color-tertiary);
+}
+
+ion-button{
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 0.2em;
+  color: var(--ion-color-primary)
+}
+
+a{
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
