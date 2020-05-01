@@ -19,8 +19,9 @@ ion-avatar{
 
 ion-button{
   border: 1px solid var(--ion-color-primary);
-  border-radius: 0.2em;
-  color: var(--ion-color-primary)
+  border-radius: 0.5em;
+  color: var(--ion-color-primary);
+  --box-shadow:none;
 }
 
 a{
@@ -28,3 +29,6 @@ a{
   text-decoration: none;
 }
 
+.notifiche-offerte, .notifiche-liste{
+  color: var(--ion-color-tertiary);
+}

@@ -17,11 +17,11 @@
         </ion-item>
         <div class="ion-margin">
             <ion-item lines="none">
-                <ion-label >Notifiche offerte</ion-label>
+                <ion-label class="notifiche-offerte">Notifiche offerte</ion-label>
                 <ion-toggle slot="end"></ion-toggle>
             </ion-item>
             <ion-item lines="none">
-                <ion-label >Notifiche sulle liste</ion-label>
+                <ion-label class="notifiche-liste">Notifiche sulle liste</ion-label>
                 <ion-toggle slot="end"></ion-toggle>
             </ion-item>
         </div>
@@ -30,12 +30,12 @@
 </ion-content>
 
 <ion-footer class="ion-no-border ion-margin-bottom">
-    <div style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
+    <div class="ion-margin" style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
 
-    <ion-button size="medium" class="ion-margin" color="transparent">Logout</ion-button>
+        <ion-button size="medium" class="ion-margin" color="transparent">Logout</ion-button>
 
-    <ion-item lines="none">
-        <a routerLink="/reset" >Reset Password</a>
-    </ion-item>
+        <ion-item lines="none">
+            <a routerLink="/reset" >Reset Password</a>
+        </ion-item>
     </div>
 </ion-footer>
