@@ -1,0 +1,39 @@
+.scrolling-wrapper {
+  margin-top: 1em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+
+  // scrollbar-width: none;
+
+  padding: 0.5em;
+
+
+  .card {
+    display: inline-block;
+    width: auto ;
+    height: auto;
+    box-sizing: border-box;
+    margin-left: 0.3em;
+    margin-bottom: 0.5em;
+    margin-right: 0.3em;
+    border-radius: 0.3em;
+    padding: 0;
+    // box-shadow :5px 5px 5px #ddd
+
+  }
+}
+
+.titolo {
+
+  margin-left: 0.4em;
+
+}
+
+img {
+  margin: 0;
+  padding: 0;
+  width: 7em;
+  height: 7em;
+}
