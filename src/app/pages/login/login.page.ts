@@ -46,10 +46,13 @@ export class LoginPage implements OnInit {
 
 
   login() {
-    this.loginService.login({email : "stas@gmail.com", password: "123"}).subscribe(
-        () => {
-          this.nav.navigateByUrl(this.url)
-        }
+    this.loginService.login({email : "stas@gmail.com", password: "123"})
+      .subscribe( (resp) =>
+        // () => {
+        //   this.nav.navigateByUrl(this.url)
+        // }
+
+        console.log(resp)
     );
   }
 }

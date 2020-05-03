@@ -1,12 +1,12 @@
 {
-  "user": [
+  "users": [
     {
       "id": 1,
       "token": "this is a token",
       "name" : "Bob",
       "email" : "bob@gmail.com",
       "shop-lists" : [
-        {
+          {
           "name" : "Casa",
           "users" : [
             {
@@ -26,6 +26,7 @@
     {
       "id" : 2,
       "name" : "Mike",
+      "token": "this is a token",
       "email" : "mike@gmail.com",
       "shop-lists" : []
     },
