@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NavController} from "@ionic/angular";
 
 @Component({
@@ -6,14 +6,30 @@ import {NavController} from "@ionic/angular";
   templateUrl: './list-card.component.html',
   styleUrls: ['./list-card.component.scss'],
 })
-export class ListCardComponent implements OnInit {
+export class ListCardComponent implements OnInit, AfterViewInit {
+
+  @Input() listOfCards;
+  @Output() cardId: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private nav: NavController) { }
 
-  ngOnInit() {}
 
-  openCard() {
-    this.nav.navigateForward("/tabs/lists/1")
+  ngAfterViewInit() {
+    console.log(this.listOfCards);
   }
 
+  ngOnInit() {
+
+  }
+
+  openCard() {
+    this.nav.navigateForward("/tabs/lists/1");
+
+  }
+
+
+  onDelete(cardId: number) {
+    //passo al padre l'id della card da eliminare
+    this.cardId.emit(cardId);
+  }
 }

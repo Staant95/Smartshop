@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ShoppingListService} from "../services/shopping-list.service";
 
 @Component({
   selector: 'app-lists',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListsPage implements OnInit {
 
-  constructor() { }
+  lists = null;
+
+  constructor(private shoplists: ShoppingListService) { }
 
   ngOnInit() {
+    this.lists = this.shoplists.getAll();
   }
 
-
+  onCardDelete() {
+    console.log("called")
+  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from "../../services/login.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Storage} from "@ionic/storage";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  url: string;
+  url: string = '/tabs/homepage';
 
   loginForm: FormGroup;
 
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
   constructor(private loginService: LoginService,
               private router: ActivatedRoute,
               private nav: Router,
-              private fb: FormBuilder
+              private fb: FormBuilder,
+              private storage: Storage
               ) { }
 
   ngOnInit() {
@@ -46,13 +48,13 @@ export class LoginPage implements OnInit {
 
 
   login() {
-    this.loginService.login({email : "stas@gmail.com", password: "123"})
-      .subscribe( (resp) =>
-        // () => {
-        //   this.nav.navigateByUrl(this.url)
-        // }
+    this.loginService.login({email : "bob@gmail.com", password: "123"})
+      .subscribe(
+         () => {
+          this.nav.navigateByUrl(this.url)
+        }
+      );
 
-        console.log(resp)
-    );
+
   }
 }

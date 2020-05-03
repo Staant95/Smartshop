@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.child {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ion-card-header{
+  margin: 0;
+  padding: 0;
+}
+
+ion-item {
+  margin: 0;
+  padding: 0;
+}
+
+ion-button {
+  margin: 0;
+  padding: 0;
+}
+ion-card-content {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  background-color: lightsalmon;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.footer {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.collaborators {
+  display: flex;
+  justify-content: end;
+}
+
+.user {
+  display: inline-block;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  font-size: 0.7em;
+}
+
+.btn-share{
+  margin-left: 0.4em;
+}
+
+.products:last-child::after {
+  content: "...";
+}
+

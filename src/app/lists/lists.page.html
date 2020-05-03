@@ -1,6 +1,6 @@
 <ion-content>
 
-    <app-list-card></app-list-card>
+    <app-list-card *ngFor="let list of lists | async" [listOfCards]="list"></app-list-card>
 
 </ion-content>
 

@@ -18,6 +18,6 @@ import {SearchProductsComponent} from "./components/search-products/search-produ
       IonicModule,
       ListsPageRoutingModule
   ],
-  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent]
+  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent,]
 })
 export class ListsPageModule {}

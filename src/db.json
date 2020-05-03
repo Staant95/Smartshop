@@ -2,25 +2,27 @@
   "users": [
     {
       "id": 1,
-      "token": "this is a token",
       "name" : "Bob",
+      "token": "123asdl12oiasd",
+      "password": "123",
       "email" : "bob@gmail.com",
-      "shop-lists" : [
+      "shoplists" : [
           {
-          "name" : "Casa",
-          "users" : [
-            {
-              "id" : 2,
-              "name" : "Mike",
-              "email" : "mike@gmail.com"
-            },
-            {
-              "id" : 1,
-              "name" : "John",
-              "email": "john@gmail.com"
-            }
-          ]
-        }
+            "id" : 1,
+            "name" : "Casa",
+            "users" : [
+              {
+                "id" : 2,
+                "name" : "Mike",
+                "email" : "mike@gmail.com"
+              },
+              {
+                "id" : 1,
+                "name" : "John",
+                "email": "john@gmail.com"
+              }
+            ]
+          }
       ]
     },
     {
@@ -28,13 +30,13 @@
       "name" : "Mike",
       "token": "this is a token",
       "email" : "mike@gmail.com",
-      "shop-lists" : []
+      "shoplists" : []
     },
     {
       "id" : 1,
       "name" : "John",
       "email": "john@gmail.com",
-      "shop-lists" : []
+      "shoplists" : []
     }
   ],
 
@@ -50,6 +52,73 @@
     {
       "id" : 3,
       "name" : "Gocciole"
+    }
+  ],
+
+
+
+
+  "shoplists" : [
+    {
+      "id" : 2,
+      "name" : "Home",
+      "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+      "total" : "8",
+      "products" : [
+        {
+          "id": 1,
+          "name" : "Biscotti"
+        },
+        {
+          "id" : 2,
+          "name" : "Patate"
+        }
+      ],
+      "users" : [
+        {
+          "id" : 2,
+          "name" : "Mike",
+          "email" : "mike@gmail.com",
+          "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
+        },
+        {
+          "id" : 1,
+          "name" : "John",
+          "email": "john@gmail.com",
+          "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
+        }
+      ]
+    },
+
+    {
+      "id" : 1,
+      "name" : "Casa",
+      "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+      "total" : "12",
+      "products" : [
+        {
+          "id": 1,
+          "name" : "Nutella"
+        },
+        {
+          "id" : 2,
+          "name" : "Nocciole"
+        }
+      ],
+      "users" : [
+        {
+          "id" : 2,
+          "name" : "Mike",
+          "email" : "mike@gmail.com",
+          "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
+        },
+        {
+          "id" : 1,
+          "name" : "John",
+          "email": "john@gmail.com",
+          "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
+        }
+      ]
     }
   ]
 
