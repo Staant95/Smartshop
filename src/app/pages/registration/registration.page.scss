@@ -28,3 +28,11 @@ a{
   font-size: 0.9em;
   text-decoration: none;
 }
+
+
+form { 
+  display:flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  height: 100%;
+}

@@ -30,3 +30,9 @@ a{
   text-decoration: none;
 }
 
+form {
+  display:flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  height: 100%;
+}
