@@ -1,5 +1,38 @@
 
 
+
 <ion-content>
+    <div style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
+
+        <ion-item lines="none" >
+            <ion-label class="title ion-text-center" >Crea il tuo account</ion-label>
+        </ion-item>
+        <ion-item class="ion-margin">
+            <ion-input placeholder="Nome" autofocus="true"  required="true" minlength="4" maxlength="16" class="input-field ion-text-center"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin">
+            <ion-input placeholder="Età" required="true" minlength="2" maxlength="2" class="input-field ion-text-center"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin ion-email">
+            <ion-input placeholder="Email" type="email"  required="true" minlength="10" maxlength="254" class="input-field ion-text-center"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin password">
+            <ion-input placeholder="Password" type="password" required="true" minlength="8" maxlength="16" class="input-field ion-text-center"></ion-input>
+        </ion-item>
+        <ion-item class="ion-margin password">
+            <ion-input placeholder="Conferma password" type="password" required="true" minlength="8" maxlength="16" class="input-field ion-text-center"></ion-input>
+        </ion-item>
+
+    </div>
 
 </ion-content>
+
+<ion-footer class="ion-no-border ion-margin-bottom">
+    <div class="ion-margin" style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
+        <ion-button size="medium" class="ion-margin" color="transparent">Registrami</ion-button>
+
+        <ion-item lines="none">
+            <a routerLink="/login">vai al login</a>
+        </ion-item>
+    </div>
+</ion-footer>

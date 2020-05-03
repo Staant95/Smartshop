@@ -1,0 +1,30 @@
+ion-item{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+ion-avatar{
+  width:10em;
+  height:10em;
+}
+
+.title{
+  font-size: 2em;
+  color: var(--ion-color-tertiary);
+}
+
+.input-field{
+  margin-top:2em;
+}
+
+ion-button{
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 0.5em;
+  color: var(--ion-color-primary);
+  --box-shadow:none;
+}
+
+a{
+  font-size: 0.9em;
+  text-decoration: none;
+}
