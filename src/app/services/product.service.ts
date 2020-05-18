@@ -6,5 +6,5 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }
