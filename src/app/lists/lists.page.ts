@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ShoppingListService} from "../services/shopping-list.service";
 
+
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.page.html',
@@ -8,16 +9,24 @@ import {ShoppingListService} from "../services/shopping-list.service";
 })
 export class ListsPage implements OnInit {
 
-  lists = null;
+  lists;
 
-  constructor(private shoplists: ShoppingListService) { }
+  constructor(
+      private shoplists: ShoppingListService,
+  ) { }
 
   ngOnInit() {
-    this.lists = this.shoplists.getAll();
+    this.shoplists.getAll().subscribe(
+        data => this.lists = data
+    );
   }
 
-  onCardDelete() {
-    console.log("called")
+  
+
+  onCardDelete(cardID, index) {
+    this.shoplists.delete(cardID).subscribe(
+        _ => this.lists.splice(index,1)
+    );
   }
 
 }

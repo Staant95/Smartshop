@@ -9,7 +9,7 @@ import {StorageService} from "../services/storage.service";
 export class HomepagePage implements OnInit {
   private test;
   constructor(private storage: Storage,
-              private storageService: StorageService
+              private storageService: StorageService,
   ) { }
 
   isDisabled;
@@ -18,6 +18,7 @@ export class HomepagePage implements OnInit {
     this.storageService.save({"name" : "stas", "age" : 25}).subscribe(console.log);
 
   }
+
 
 
 

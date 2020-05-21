@@ -10,14 +10,15 @@ import { ListsPage } from './lists.page';
 import {ListCardComponent} from "./components/list-card/list-card.component";
 import {ShoplistComponent} from "./components/shoplist/shoplist.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
+import {ShoplistModalComponent} from "./components/shoplist-modal/shoplist-modal.component";
 
 @NgModule({
   imports: [
       CommonModule,
       FormsModule,
       IonicModule,
-      ListsPageRoutingModule
+      ListsPageRoutingModule,
   ],
-  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent,]
+  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent, ShoplistModalComponent],
 })
 export class ListsPageModule {}

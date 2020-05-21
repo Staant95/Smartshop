@@ -16,6 +16,6 @@ export class ShoppingListService {
 
 
   delete(id: number) {
-    return this.http.delete(`URL.shoplists${id}`)
+    return this.http.delete(URL.shoplists + id);
   }
 }

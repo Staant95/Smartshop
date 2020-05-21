@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {ShoplistComponent} from "./components/shoplist/shoplist.component";
-import {ListCardComponent} from "./components/list-card/list-card.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
 import {ListsPage} from "./lists.page";
+import {ShoplistModalComponent} from "./components/shoplist-modal/shoplist-modal.component";
 
 const routes: Routes = [
   {
@@ -26,9 +26,9 @@ const routes: Routes = [
         path: 'search',
         // SMART Component
         component: SearchProductsComponent
-      }
-    ]
-  }
+      },
+    ],
+  },
 
 ];
 

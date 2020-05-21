@@ -27,9 +27,8 @@ export class ListCardComponent implements OnInit, AfterViewInit {
 
   }
 
-
-  onDelete(cardId: number) {
-    //passo al padre l'id della card da eliminare
-    this.cardId.emit(cardId);
+  deleteCard(cardID: number) {
+    this.cardId.emit(cardID);
   }
+
 }

@@ -2,125 +2,93 @@
   "users": [
     {
       "id": 1,
-      "name" : "Bob",
+      "name": "Bob",
       "token": "123asdl12oiasd",
       "password": "123",
-      "email" : "bob@gmail.com",
-      "shoplists" : [
-          {
-            "id" : 1,
-            "name" : "Casa",
-            "users" : [
-              {
-                "id" : 2,
-                "name" : "Mike",
-                "email" : "mike@gmail.com"
-              },
-              {
-                "id" : 1,
-                "name" : "John",
-                "email": "john@gmail.com"
-              }
-            ]
-          }
+      "email": "bob@gmail.com",
+      "shoplists": [
+        {
+          "id": 1,
+          "name": "Casa",
+          "users": [
+            {
+              "id": 2,
+              "name": "Mike",
+              "email": "mike@gmail.com"
+            },
+            {
+              "id": 1,
+              "name": "John",
+              "email": "john@gmail.com"
+            }
+          ]
+        }
       ]
     },
     {
-      "id" : 2,
-      "name" : "Mike",
+      "id": 2,
+      "name": "Mike",
       "token": "this is a token",
-      "email" : "mike@gmail.com",
-      "shoplists" : []
+      "email": "mike@gmail.com",
+      "shoplists": []
     },
     {
-      "id" : 1,
-      "name" : "John",
+      "id": 1,
+      "name": "John",
       "email": "john@gmail.com",
-      "shoplists" : []
+      "shoplists": []
     }
   ],
-
-  "products" : [
+  "products": [
     {
-      "id" : 1,
-      "name" : "Nutella"
+      "id": 1,
+      "name": "Nutella"
     },
     {
-      "id" : 2,
-      "name" : "Nascondini"
+      "id": 2,
+      "name": "Nascondini"
     },
     {
-      "id" : 3,
-      "name" : "Gocciole"
+      "id": 3,
+      "name": "Gocciole"
     }
   ],
-
-
-
-
-  "shoplists" : [
+  "shoplists": [
     {
-      "id" : 2,
-      "name" : "Home",
-      "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-      "total" : "8",
-      "products" : [
+      "id": 4,
+      "name": "Natale",
+      "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+      "total": "8",
+      "products": [
         {
           "id": 1,
-          "name" : "Biscotti"
+          "name": "Biscotti",
+          "marca" : "Barilla",
+          "taglia" : "500",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
         },
         {
-          "id" : 2,
-          "name" : "Patate"
+          "id": 2,
+          "name": "Patate",
+          "marca" : "Barilla",
+          "taglia" : "200",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
         }
       ],
-      "users" : [
+      "users": [
         {
-          "id" : 2,
-          "name" : "Mike",
-          "email" : "mike@gmail.com",
-          "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
+          "id": 3,
+          "name": "Boh",
+          "email": "boh@gmail.com",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
         },
-        {
-          "id" : 1,
-          "name" : "John",
-          "email": "john@gmail.com",
-          "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
-        }
-      ]
-    },
-
-    {
-      "id" : 1,
-      "name" : "Casa",
-      "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-      "total" : "12",
-      "products" : [
         {
           "id": 1,
-          "name" : "Nutella"
-        },
-        {
-          "id" : 2,
-          "name" : "Nocciole"
-        }
-      ],
-      "users" : [
-        {
-          "id" : 2,
-          "name" : "Mike",
-          "email" : "mike@gmail.com",
-          "avatar" : "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
-        },
-        {
-          "id" : 1,
-          "name" : "John",
-          "email": "john@gmail.com",
-          "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
+          "name": "Clara",
+          "email": "clara@gmail.com",
+          "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
         }
       ]
     }
   ]
-
-
 }
