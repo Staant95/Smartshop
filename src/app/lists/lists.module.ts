@@ -10,7 +10,8 @@ import { ListsPage } from './lists.page';
 import {ListCardComponent} from "./components/list-card/list-card.component";
 import {ShoplistComponent} from "./components/shoplist/shoplist.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
-import {ShoplistModalComponent} from "./components/shoplist-modal/shoplist-modal.component";
+import {CreateShoplistModalPageModule} from "./modals/create-shoplist-modal/create-shoplist-modal.module";
+import {ProductResolverService} from "../services/resolvers/product-resolver.service";
 
 @NgModule({
   imports: [
@@ -18,7 +19,9 @@ import {ShoplistModalComponent} from "./components/shoplist-modal/shoplist-modal
       FormsModule,
       IonicModule,
       ListsPageRoutingModule,
+      CreateShoplistModalPageModule
   ],
-  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent, ShoplistModalComponent],
+  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent],
+    providers: [ ProductResolverService ]
 })
 export class ListsPageModule {}

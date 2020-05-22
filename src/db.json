@@ -51,42 +51,63 @@
     {
       "id": 3,
       "name": "Gocciole"
+    },
+    {
+      "name": "Kiwi",
+      "id": 4
     }
   ],
   "shoplists": [
     {
-      "id": 4,
-      "name": "Natale",
-      "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-      "total": "8",
+      "name": "Git push",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
+      "total": "",
+      "products": [],
+      "users": [],
+      "id": 4
+    },
+    {
+      "name": "Git add",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
+      "total": "",
+      "users": [],
+      "id": 5
+    }
+  ],
+  "shoplists-products": [
+    {
       "products": [
         {
           "id": 1,
           "name": "Biscotti",
-          "marca" : "Barilla",
-          "taglia" : "500",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
+          "marca": "Barilla",
+          "taglia": "500",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+          "quantity": 2
+        }
+      ],
+      "id": 4,
+      "name": "Git push"
+    },
+    {
+      "id": 5,
+      "name": "Git add",
+      "products": [
+        {
+          "id": 1,
+          "name": "Biscotti",
+          "marca": "Barilla",
+          "taglia": "500",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+          "quantity": 2
         },
         {
           "id": 2,
           "name": "Patate",
-          "marca" : "Barilla",
-          "taglia" : "200",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
-        }
-      ],
-      "users": [
-        {
-          "id": 3,
-          "name": "Boh",
-          "email": "boh@gmail.com",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png"
-        },
-        {
-          "id": 1,
-          "name": "Clara",
-          "email": "clara@gmail.com",
-          "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png"
+          "marca": "Barilla",
+          "taglia": "200",
+          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
+          "quantity": 1
         }
       ]
     }

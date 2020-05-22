@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ShoplistComponent} from "./components/shoplist/shoplist.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
 import {ListsPage} from "./lists.page";
-import {ShoplistModalComponent} from "./components/shoplist-modal/shoplist-modal.component";
+import {ProductResolverService} from "../services/resolvers/product-resolver.service";
 
 const routes: Routes = [
   {
@@ -20,15 +20,18 @@ const routes: Routes = [
       {
         path: '',
         // SMART Component
-        component: ShoplistComponent
+        component: ShoplistComponent,
+        resolve: {
+          products: ProductResolverService
+        }
       },
       {
         path: 'search',
-        // SMART Component
         component: SearchProductsComponent
-      },
+      }
     ],
   },
+
 
 ];
 

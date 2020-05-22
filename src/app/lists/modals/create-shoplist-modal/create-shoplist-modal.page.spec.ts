@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ShoplistModalComponent } from './shoplist-modal.component';
+import { CreateShoplistModalPage } from './create-shoplist-modal.page';
 
-describe('ShoplistModalComponent', () => {
-  let component: ShoplistModalComponent;
-  let fixture: ComponentFixture<ShoplistModalComponent>;
+describe('CreateShoplistModalPage', () => {
+  let component: CreateShoplistModalPage;
+  let fixture: ComponentFixture<CreateShoplistModalPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShoplistModalComponent ],
+      declarations: [ CreateShoplistModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ShoplistModalComponent);
+    fixture = TestBed.createComponent(CreateShoplistModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

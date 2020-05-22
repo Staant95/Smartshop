@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" color="primary">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Crea la tua lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-input #list placeholder="Nome lista"></ion-input>
+<ion-button (click)="sendData(list.value)">Crea lista</ion-button>
+
+</ion-content>

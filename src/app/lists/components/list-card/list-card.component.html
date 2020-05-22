@@ -25,7 +25,7 @@
 
 
     <ion-item lines="none">
-      <ion-label slot="start">
+      <ion-label slot="start" *ngIf="listOfCards.total">
         {{listOfCards.total}} $
       </ion-label>
 

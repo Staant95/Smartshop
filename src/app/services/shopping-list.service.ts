@@ -18,4 +18,13 @@ export class ShoppingListService {
   delete(id: number) {
     return this.http.delete(URL.shoplists + id);
   }
+
+  create(listName: string) {
+    return this.http.post(URL.shoplists, {
+      "name" : listName,
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
+      "total": "",
+      "users": []
+    });
+  }
 }
