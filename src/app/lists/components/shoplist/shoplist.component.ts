@@ -1,19 +1,21 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { map } from 'rxjs/operators';
 import {ShoplistProductService} from "../../../services/shoplist-product.service";
+import {BehaviorSubject, Observable} from "rxjs";
+import {Product} from "../../../models/products.model";
 
 @Component({
   selector: 'app-shoplist',
   templateUrl: './shoplist.component.html',
   styleUrls: ['./shoplist.component.scss'],
 })
-export class ShoplistComponent implements OnInit, AfterViewInit {
+export class ShoplistComponent implements OnInit {
 
-  products;
-  productQuantity: number;
+  products$: Observable<Product[]>;
+  compareSupermarketsBtn$: BehaviorSubject<boolean>;
   listId: number;
-  @ViewChild('quantity', {static: false}) quantity;
+  listName: string;
+  bestSupermarket$: Observable<any>;
 
   constructor(
       private route: ActivatedRoute,
@@ -21,61 +23,33 @@ export class ShoplistComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    this.route.data.pipe(
-      map(data => data.products)
-    ).subscribe(data => this.products = data)
-    this.route.paramMap.subscribe(params => this.listId = parseInt(params.get('id')))
-  }
-
-  increaseQuantity(product) {
-
-    this.productQuantity += 1;
-    this.products['products'].forEach((p, index) => {
-      if(p['id'] === product['id']) {
-        this.products['products'][index]['quantity'] = this.productQuantity
-      }
+    this.products$ = this.spService.get(this.listId);
+    this.route.paramMap.subscribe(params => {
+      this.listId = parseInt(params.get('id'));
     });
-
-    this.spService.put(this.listId, this.products).subscribe();
-
+    this.route.queryParams.subscribe(q => this.listName = q.name)
+    this.compareSupermarketsBtn$ = this.spService.getSupermarketState();
   }
 
-  decreaseQuantity(product) {
-
-    this.productQuantity -= 1;
-    this.products['products'].forEach((p, index) => {
-      if(p['id'] === product['id']) {
-        this.products['products'][index]['quantity'] = this.productQuantity
-      }
-    });
-
-    this.spService.put(this.listId, this.products).subscribe();
-
-
+  increaseQuantity(product: Product) {
+    this.spService.put(this.listId, product.quantity + 1, product.id);
   }
 
-  // changeQuantity(product) {
-  //   // this.quantity.nativeElement.innerText = parseInt(this.quantity.nativeElement.innerText) + 1;
-  //   this.productQuantity += 1;
-  //   this.products['products'].forEach((p, index) => {
-  //     if(p['id'] === product['id']) {
-  //       this.products['products'][index]['quantity'] = this.productQuantity
-  //     }
-  //   });
-  //
-  //   console.log(this.products)
-  //
-  // }
-
-  ngAfterViewInit(): void {
-    this.productQuantity = parseInt(this.quantity.nativeElement.innerHTML);
+  decreaseQuantity(product: Product) {
+    this.spService.put(this.listId, product.quantity - 1 , product.id);
   }
 
 
+  deleteProduct(productId: number) {
+    this.spService.delete(productId)
+  }
 
 
-
-
+  compareSupermarket(distanza: number) {
+    console.log(distanza)
+    this.compareSupermarketsBtn$.next(false);
+    this.bestSupermarket$ = this.spService.findBestSupermarket(1)
+  }
 
 
 }

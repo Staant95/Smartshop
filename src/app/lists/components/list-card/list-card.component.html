@@ -13,7 +13,7 @@
     </ion-item>
   </ion-card-header>
 
-  <ion-card-content routerLink="{{listOfCards.id}}">
+  <ion-card-content [routerLink]="listOfCards.id" [queryParams]="{name: listOfCards.name}">
 
     <div class="container content">
       <h1 class="child">{{listOfCards.name}}</h1>

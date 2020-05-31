@@ -6,6 +6,7 @@
       "token": "123asdl12oiasd",
       "password": "123",
       "email": "bob@gmail.com",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
       "shoplists": [
         {
           "id": 1,
@@ -37,6 +38,15 @@
       "name": "John",
       "email": "john@gmail.com",
       "shoplists": []
+    },
+    {
+      "nome": "Mario",
+      "eta": "25",
+      "email": "Mario@gmail.com",
+      "password": "asdqwasd",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
+      "token": "23asdl12oiasdasdqw",
+      "id": 3
     }
   ],
   "products": [
@@ -59,55 +69,30 @@
   ],
   "shoplists": [
     {
-      "name": "Git push",
-      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
-      "total": "",
-      "products": [],
-      "users": [],
-      "id": 4
-    },
-    {
-      "name": "Git add",
+      "name": "Daje",
       "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
       "total": "",
       "users": [],
-      "id": 5
+      "id": 1
     }
   ],
   "shoplists-products": [
     {
-      "products": [
-        {
-          "id": 1,
-          "name": "Biscotti",
-          "marca": "Barilla",
-          "taglia": "500",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-          "quantity": 2
-        }
-      ],
-      "id": 4,
-      "name": "Git push"
-    },
-    {
       "id": 5,
-      "name": "Git add",
       "products": [
         {
-          "id": 1,
-          "name": "Biscotti",
+          "name": "kiwi",
+          "quantity": 4,
+          "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
           "marca": "Barilla",
-          "taglia": "500",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-          "quantity": 2
+          "taglia": "400"
         },
         {
-          "id": 2,
-          "name": "Patate",
+          "name": "pane",
+          "quantity": 1,
+          "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
           "marca": "Barilla",
-          "taglia": "200",
-          "avatar": "https://cdn3.iconfinder.com/data/icons/cool-avatars-2/190/00-22-2-512.png",
-          "quantity": 1
+          "taglia": "400"
         }
       ]
     }

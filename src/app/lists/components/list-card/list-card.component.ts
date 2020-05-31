@@ -22,10 +22,6 @@ export class ListCardComponent implements OnInit, AfterViewInit {
 
   }
 
-  openCard() {
-    this.nav.navigateForward("/tabs/lists/1");
-
-  }
 
   deleteCard(cardID: number) {
     this.cardId.emit(cardID);

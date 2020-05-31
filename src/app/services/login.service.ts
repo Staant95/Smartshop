@@ -38,6 +38,7 @@ export class LoginService {
                           'name' : response['name'],
                           'email' : response['email'],
                           'token' : response['token'],
+                          'avatar' : response['avatar'],
                           'id': response['id']
                         }).subscribe(_ => this.isLogged$.next(true));
 

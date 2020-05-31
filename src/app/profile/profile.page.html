@@ -4,7 +4,7 @@
     <div style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
         <ion-item lines="none">
             <ion-avatar>
-                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y%22%3E" />
+                <img src="{{userAvatar}}" />
             </ion-avatar>
         </ion-item>
 
@@ -17,12 +17,12 @@
         </ion-item>
         <div class="ion-margin">
             <ion-item lines="none">
-                <ion-label class="notifiche-offerte">Notifiche offerte</ion-label>
-                <ion-toggle slot="end"></ion-toggle>
+                <ion-text class="notifiche-offerte" >Notifiche offerte</ion-text>
+                <ion-toggle #offerte slot="end" (ionChange)="setNotificheOfferte(offerte.checked)"></ion-toggle>
             </ion-item>
             <ion-item lines="none">
-                <ion-label class="notifiche-liste">Notifiche sulle liste</ion-label>
-                <ion-toggle slot="end"></ion-toggle>
+                <ion-text class="notifiche-liste">Notifiche sulle liste</ion-text>
+                <ion-toggle #liste slot="end" (ionChange)="setNotificheOfferte(liste.checked)"></ion-toggle>
             </ion-item>
         </div>
 
@@ -32,10 +32,10 @@
 <ion-footer class="ion-no-border ion-margin-bottom">
     <div class="ion-margin" style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
 
-        <ion-button size="medium" class="ion-margin" color="transparent">Logout</ion-button>
+        <ion-button size="medium" class="ion-margin" color="transparent" (click)="logout()">Logout</ion-button>
 
-        <ion-item lines="none">
-            <a routerLink="/reset" >Reset Password</a>
-        </ion-item>
+<!--        <ion-item lines="none">-->
+<!--            <a routerLink="/reset" >Reset Password</a>-->
+<!--        </ion-item>-->
     </div>
 </ion-footer>

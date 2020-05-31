@@ -21,9 +21,9 @@ const routes: Routes = [
         path: '',
         // SMART Component
         component: ShoplistComponent,
-        resolve: {
-          products: ProductResolverService
-        }
+        // resolve: {
+        //   products: ProductResolverService
+        // }
       },
       {
         path: 'search',

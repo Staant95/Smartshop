@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import {RegistrationService} from "../../services/registration.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +12,9 @@ export class RegistrationPage implements OnInit {
 
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private registrationService: RegistrationService,
+              private router: Router) { }
 
   ngOnInit() {
     this.registrationForm = this.fb.group({
@@ -48,6 +52,12 @@ export class RegistrationPage implements OnInit {
 
 
   registration() {
-
+    let newObj= delete this.registrationForm.value['conf_password'];
+    // default values for json-server
+    this.registrationForm.value['avatar'] = 'https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png';
+    this.registrationForm.value['token'] = '23asdl12oiasdasdqw';
+    this.registrationService.register(this.registrationForm.value).subscribe(
+        _ => this.router.navigateByUrl('/login')
+    );
   }
 }

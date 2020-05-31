@@ -19,7 +19,6 @@ export class LoginPage implements OnInit {
               private router: ActivatedRoute,
               private nav: Router,
               private fb: FormBuilder,
-              private storage: Storage
               ) { }
 
   ngOnInit() {
@@ -48,7 +47,7 @@ export class LoginPage implements OnInit {
 
 
   login() {
-    this.loginService.login({email : "bob@gmail.com", password: "123"})
+    this.loginService.login(this.loginForm.value)
       .subscribe(
          () => {
           this.nav.navigateByUrl(this.url)
