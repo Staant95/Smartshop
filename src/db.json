@@ -47,6 +47,15 @@
       "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
       "token": "23asdl12oiasdasdqw",
       "id": 3
+    },
+    {
+      "nome": "Indian",
+      "eta": "23",
+      "email": "indiaboi@gmail.com",
+      "password": "password",
+      "avatar": "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
+      "token": "23asdl12oiasdasdqw",
+      "id": 4
     }
   ],
   "products": [
