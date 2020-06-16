@@ -10,9 +10,9 @@ import { ListsPage } from './lists.page';
 import {ListCardComponent} from "./components/list-card/list-card.component";
 import {ShoplistComponent} from "./components/shoplist/shoplist.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
-import {CreateShoplistModalPageModule} from "./modals/create-shoplist-modal/create-shoplist-modal.module";
 import {ProductResolverService} from "../services/resolvers/product-resolver.service";
 import {SharePopoverComponent} from "./components/share-popover/share-popover.component";
+import {CreateCardPopoverComponent} from "./components/create-card-popover/create-card-popover.component";
 
 @NgModule({
   imports: [
@@ -20,18 +20,19 @@ import {SharePopoverComponent} from "./components/share-popover/share-popover.co
       FormsModule,
       IonicModule,
       ListsPageRoutingModule,
-      CreateShoplistModalPageModule
   ],
   declarations: [
       ListsPage,
       ListCardComponent,
       ShoplistComponent,
       SearchProductsComponent,
-      SharePopoverComponent
+      SharePopoverComponent,
+      CreateCardPopoverComponent
   ],
     providers: [ ProductResolverService ],
     entryComponents: [
-        SharePopoverComponent
+        SharePopoverComponent,
+        CreateCardPopoverComponent
     ]
 })
 export class ListsPageModule {}

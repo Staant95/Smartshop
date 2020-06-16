@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ShoppingListService} from "../services/shopping-list.service";
-import {ModalController} from "@ionic/angular";
-import {CreateShoplistModalPage} from "./modals/create-shoplist-modal/create-shoplist-modal.page";
+import { PopoverController} from "@ionic/angular";
+import {CreateCardPopoverComponent} from "./components/create-card-popover/create-card-popover.component";
 
 
 @Component({
@@ -13,11 +13,9 @@ export class ListsPage implements OnInit {
 
   lists;
 
-
-
   constructor(
       private shoplists: ShoppingListService,
-      private modalCtrl: ModalController
+      private popoverCtrl: PopoverController
   ) { }
 
   ngOnInit() {
@@ -35,17 +33,26 @@ export class ListsPage implements OnInit {
     );
   }
 
-  async presentModal() {
-    const modal = await this.modalCtrl.create({
-      component: CreateShoplistModalPage
+
+  async createCard(event) {
+
+    const popover = await this.popoverCtrl.create({
+      component: CreateCardPopoverComponent,
+      event: event
     });
 
-
-    modal.onWillDismiss().then((data) => {
-      this.shoplists.create(data.data['listName']).subscribe(
-          list => this.lists.push(list)
-      );
+    popover.onDidDismiss().then(data => {
+      if(data !== null){
+        if(data !== 'undefined'){
+          this.shoplists.create(data.data['listName']).subscribe(
+              list => this.lists.push(list)
+          );
+        }
+      }
     });
-    return await modal.present();
+
+    return await popover.present();
   }
+
+
 }

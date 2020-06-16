@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CreateShoplistModalPage } from './create-shoplist-modal.page';
+import { CreateCardPopoverComponent } from './create-card-popover.component';
 
-describe('CreateShoplistModalPage', () => {
-  let component: CreateShoplistModalPage;
-  let fixture: ComponentFixture<CreateShoplistModalPage>;
+describe('CreateCardPopoverComponent', () => {
+  let component: CreateCardPopoverComponent;
+  let fixture: ComponentFixture<CreateCardPopoverComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateShoplistModalPage ],
+      declarations: [ CreateCardPopoverComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CreateShoplistModalPage);
+    fixture = TestBed.createComponent(CreateCardPopoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
