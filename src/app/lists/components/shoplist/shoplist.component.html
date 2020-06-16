@@ -92,9 +92,18 @@
 
 
 <ng-template #showSupermarket>
+
     <div *ngIf="bestSupermarket$| async as supermarket">
-        <h3>{{supermarket.name}}</h3>
-        <p>{{supermarket.total}}</p>
-        <p> {{supermarket.city}} - {{supermarket.location}}</p>
+        <ion-item>
+            <ion-avatar class="item-avatar" slot="start">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.gofreedownload.net%2Fconad-117103.jpg&f=1&nofb=1">
+            </ion-avatar>
+            <ion-text class="ion-padding">
+                <div  class="ion-margin">{{supermarket.name}}</div>
+                <div style="color: var(--ion-color-secondary); font-size:1em;" class="ion-margin"> <ion-icon name="location-outline" style="color: var(--ion-color-tertiary);" class="ion-margin-end"></ion-icon> {{supermarket.city}} - {{supermarket.location}}</div>
+                <div style="color: var(--ion-color-secondary); font-size:1em;" class="ion-margin"> <ion-icon name="wallet-outline"  style="color: var(--ion-color-tertiary);" class="ion-margin-end"></ion-icon> {{supermarket.total}} €</div>
+            </ion-text>
+        </ion-item>
+
     </div>
 </ng-template>

@@ -9,9 +9,22 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
-
-<ion-input #list placeholder="Nome lista"></ion-input>
-<ion-button (click)="sendData(list.value)">Crea lista</ion-button>
-
+  <div style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
+    <ion-item>
+      <ion-input #list placeholder="Nome lista" autofocus="true" class="ion-text-center" ></ion-input>
+    </ion-item>
+  </div>
 </ion-content>
+
+<ion-footer class="ion-no-border ion-margin-bottom">
+  <div class="ion-margin" style="display:flex; flex-direction: column; justify-content: center; height: 100%;">
+    <ion-button size="medium" class="ion-margin primary-button" color="transparent" (click)="sendData(list.value)">Aggiungi lista</ion-button>
+  </div>
+</ion-footer>
+
+
+
+
