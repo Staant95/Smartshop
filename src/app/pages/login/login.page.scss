@@ -9,7 +9,8 @@ ion-avatar{
 }
 
 .title{
-  font-size: 2em;
+  font-family: shopie;
+  font-size: 4em;
   color: var(--ion-color-tertiary);
   margin-bottom: 2em;
 }
@@ -35,4 +36,8 @@ form {
   flex-direction: column; 
   justify-content: center; 
   height: 100%;
+}
+
+ion-content{
+  background-image: url("https://image.freepik.com/vettori-gratuito/modello-su-shopping_1061-495.jpg") !important;
 }
