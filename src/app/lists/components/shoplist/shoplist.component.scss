@@ -4,3 +4,50 @@
   max-width: 100px !important;  //any size
   max-height: 100px !important; //any size
 }
+
+.product-info{
+  color: var(--ion-color-secondary); font-size:0.9em;
+}
+
+.up-row-container{
+  max-height:1em;
+}
+
+.up-row-icon{
+  font-size:1em; color:#888;
+}
+
+.counter-label{
+  font-size:1.8em; color: var(--ion-color-primary);
+}
+
+.down-row-container{
+  max-height:1em; font-size:1em;
+}
+
+.down-row-icon{
+  font-size:1em; color:#888;
+}
+
+.distance-label{
+  font-size:0.8em;
+}
+
+.compare-button{
+  display:flex;
+  padding-bottom:1em;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.market-info{
+  color: var(--ion-color-secondary);
+  font-size:0.8em;
+  margin-top:0.4em;
+}
+
+.market-info-icon{
+  color: var(--ion-color-tertiary);
+}

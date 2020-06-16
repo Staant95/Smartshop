@@ -41,3 +41,7 @@ form {
 ion-content{
   background-image: url("https://image.freepik.com/vettori-gratuito/modello-su-shopping_1061-495.jpg") !important;
 }
+
+.login-button{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
+}

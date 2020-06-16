@@ -1,3 +1,19 @@
 
+.header{
+}
 
+.header-title{
+  color: var(--ion-color-tertiary) ;
+  text-align: center;
+  font-family: shopie;
+  font-size: 2em;
+}
+
+.box-container{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
+}
+
+.empty-list-text{
+  font-family: handlee;
+}
 

@@ -30,19 +30,19 @@
             </ion-avatar>
             <ion-text class="ion-padding">
                 <div>{{product.name}}</div>
-                <div style="color: var(--ion-color-secondary); font-size:0.9em;">{{product.brand}}</div>
-                <div style="color: var(--ion-color-secondary); font-size:0.9em;">{{product.format}}</div>
+                <div class="product-info" >{{product.brand}}</div>
+                <div class="product-info" >{{product.format}}</div>
             </ion-text>
 
             <div slot="end">
-                <div class="ion-text-center" style="max-height:1em;">
-                    <ion-icon name="chevron-up-outline" style="font-size:1em; color:#888;" (click)="increaseQuantity(product)"></ion-icon>
+                <div class="ion-text-center" class="up-row-container">
+                    <ion-icon name="chevron-up-outline"class="up-row-icon" (click)="increaseQuantity(product)"></ion-icon>
                 </div>
                 <div>
-                    <label #quantity class="ion-text-center" style=" font-size:1.8em; color: var(--ion-color-primary);" >{{product.quantity}}</label>
+                    <label #quantity class="ion-text-center" class="counter-label" >{{product.quantity}}</label>
                 </div>
-                <div class="ion-text-center" style="max-height:1em; font-size:1em;">
-                    <ion-icon name="chevron-down-outline" style="font-size:1em; color:#888;" (click)="decreaseQuantity(product)"></ion-icon>
+                <div class="ion-text-center" class="down-row-container">
+                    <ion-icon name="chevron-down-outline" class="down-row-icon" (click)="decreaseQuantity(product)"></ion-icon>
                 </div>
             </div>
         </ion-item>
@@ -65,14 +65,12 @@
             </ion-fab-button>
         </ion-fab>
 
-
-
 </ion-content>
 
 <ion-footer *ngIf="(products$ | async).length">
     <div *ngIf="(compareSupermarketsBtn$ | async); else showSupermarket">
         <ion-item lines="none"  >
-            <ion-label style="font-size:0.8em;" class="ion-text-center " color="tertiary">Distanza supermercato</ion-label>
+            <ion-label class="distance-label" class="ion-text-center " color="tertiary">Distanza supermercato</ion-label>
         </ion-item>
 
 
@@ -83,7 +81,7 @@
             </ion-range>
         </ion-item>
 
-        <div style="display:flex; padding-bottom:1em; width:100%; align-items: center; justify-content: center; border: 1px solid transparent;">
+        <div class="compare-button">
             <ion-button (click)="compareSupermarket(rangeBar.value)">Confronta supermercati</ion-button>
         </div>
     </div>
@@ -94,14 +92,14 @@
 <ng-template #showSupermarket>
 
     <div *ngIf="bestSupermarket$| async as supermarket">
-        <ion-item>
+        <ion-item lines="none">
             <ion-avatar class="item-avatar" slot="start">
                 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.gofreedownload.net%2Fconad-117103.jpg&f=1&nofb=1">
             </ion-avatar>
             <ion-text class="ion-padding">
-                <div  class="ion-margin">{{supermarket.name}}</div>
-                <div style="color: var(--ion-color-secondary); font-size:1em;" class="ion-margin"> <ion-icon name="location-outline" style="color: var(--ion-color-tertiary);" class="ion-margin-end"></ion-icon> {{supermarket.city}} - {{supermarket.location}}</div>
-                <div style="color: var(--ion-color-secondary); font-size:1em;" class="ion-margin"> <ion-icon name="wallet-outline"  style="color: var(--ion-color-tertiary);" class="ion-margin-end"></ion-icon> {{supermarket.total}} €</div>
+                <div  >{{supermarket.name}}</div>
+                <div class="market-info"> <ion-icon name="location-outline" class="market-info-icon" ></ion-icon> {{supermarket.city}} - {{supermarket.location}}</div>
+                <div class="market-info"> <ion-icon name="wallet-outline"  class="market-info-icon" ></ion-icon> {{supermarket.total}} €</div>
             </ion-text>
         </ion-item>
 

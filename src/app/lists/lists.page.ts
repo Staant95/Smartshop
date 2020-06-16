@@ -25,7 +25,7 @@ export class ListsPage implements OnInit {
     console.log(this.lists);
   }
 
-  
+
 
   onCardDelete(cardID, index) {
     this.shoplists.delete(cardID).subscribe(

@@ -32,11 +32,15 @@ export class ShoplistComponent implements OnInit {
   }
 
   increaseQuantity(product: Product) {
-    this.spService.put(this.listId, product.quantity + 1, product.id);
+    if (product.quantity < 9) {
+      this.spService.put(this.listId, product.quantity + 1, product.id);
+    }
   }
 
   decreaseQuantity(product: Product) {
-    this.spService.put(this.listId, product.quantity - 1 , product.id);
+    if (product.quantity > 0) {
+      this.spService.put(this.listId, product.quantity - 1 , product.id);
+    }
   }
 
 

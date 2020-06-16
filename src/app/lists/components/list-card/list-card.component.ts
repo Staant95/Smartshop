@@ -28,7 +28,7 @@ export class ListCardComponent implements OnInit, AfterViewInit {
   async presentPopover(event: any, listId: number) {
     const popover = await this.popoverController.create({
       component: SharePopoverComponent,
-      event: event,
+      event,
       translucent: true,
       componentProps: {'listId' : listId }
     });

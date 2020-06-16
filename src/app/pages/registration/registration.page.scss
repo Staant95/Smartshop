@@ -12,7 +12,7 @@ ion-avatar{
 
 .title{
   font-family: shopie;
-  font-size: 4em;
+  font-size: 2em;
   color: var(--ion-color-tertiary);
 }
 
@@ -38,4 +38,8 @@ form {
   flex-direction: column; 
   justify-content: center; 
   height: 100%;
+}
+
+.registration-button{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
 }

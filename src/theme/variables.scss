@@ -2,9 +2,16 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
+.popover-wrapper .popover-content{
+  position: relative !important;
+  margin: 0 auto !important;
+  left: auto !important;
+  top: auto !important;
+}
 :root {
   /** primary **/
-  --ion-color-primary: #fe5c4e;
+  --ion-color-primary: #d77;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -76,7 +83,7 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -226,3 +233,5 @@
     --ion-tab-bar-background: #1f1f1f;
   }
 }
+
+

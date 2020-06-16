@@ -1,3 +1,4 @@
+
 ion-item{
   display: flex;
   justify-content: center;
@@ -9,7 +10,8 @@ ion-avatar{
 }
 
 .username{
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family: shopie;
 }
 
 .mail{
@@ -31,4 +33,12 @@ a{
 
 .notifiche-offerte, .notifiche-liste{
   color: var(--ion-color-tertiary);
+}
+
+.box-container{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
+}
+
+.logout-button{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
 }

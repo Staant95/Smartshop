@@ -7,9 +7,7 @@
         <img src="{{listOfCards.avatar}}"/>
       </ion-avatar>
 
-      <ion-button slot="end" (click)="deleteCard(listOfCards.id)">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
+        <ion-icon slot="end" color="primary" name="trash" (click)="deleteCard(listOfCards.id)"></ion-icon>
     </ion-item>
   </ion-card-header>
 
@@ -31,14 +29,12 @@
 
 
       <ion-item lines="none" *ngFor="let user of listOfCards.users">
-        <ion-avatar style="margin:0.1em; height: 1.5em; width:1.5em;" slot="end">
+        <ion-avatar slot="end">
           <img src="{{user.avatar}}">
         </ion-avatar>
       </ion-item>
 
-      <ion-button slot="end" (click)="presentPopover($event, listOfCards.id)">
-        <ion-icon name="share-social"></ion-icon>
-      </ion-button>
+        <ion-icon name="share-social"  slot="end" (click)="presentPopover($event, listOfCards.id)"></ion-icon>
 
     </ion-item>
 
