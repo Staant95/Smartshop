@@ -12,6 +12,7 @@ import {ShoplistComponent} from "./components/shoplist/shoplist.component";
 import {SearchProductsComponent} from "./components/search-products/search-products.component";
 import {CreateShoplistModalPageModule} from "./modals/create-shoplist-modal/create-shoplist-modal.module";
 import {ProductResolverService} from "../services/resolvers/product-resolver.service";
+import {SharePopoverComponent} from "./components/share-popover/share-popover.component";
 
 @NgModule({
   imports: [
@@ -21,7 +22,16 @@ import {ProductResolverService} from "../services/resolvers/product-resolver.ser
       ListsPageRoutingModule,
       CreateShoplistModalPageModule
   ],
-  declarations: [ListsPage, ListCardComponent, ShoplistComponent, SearchProductsComponent],
-    providers: [ ProductResolverService ]
+  declarations: [
+      ListsPage,
+      ListCardComponent,
+      ShoplistComponent,
+      SearchProductsComponent,
+      SharePopoverComponent
+  ],
+    providers: [ ProductResolverService ],
+    entryComponents: [
+        SharePopoverComponent
+    ]
 })
 export class ListsPageModule {}

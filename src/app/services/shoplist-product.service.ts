@@ -14,27 +14,19 @@ export class ShoplistProductService {
     {
       "id" : 0,
       "name" : "mela",
-      "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
-      "brand" : "Barilla",
+      "avatar" : "http://www.andromedafree.it/multimedia/clipart/upgrade1/varie/15/mela.png",
+      "brand" : "Melinda",
       "quantity" : 2,
       "format" : 500,
     },
     {
       "id" : 1,
       "name" : "kiwi",
-      "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
-      "brand" : "Barilla",
+      "avatar" : "https://orig00.deviantart.net/7574/f/2012/171/b/5/kiwi_icon_2_by_yamshing-d545azt.png",
+      "brand" : "Zespri",
       "quantity" : 1,
       "format" : 500
     },
-    {
-      "id" : 2,
-      "name" : "pane",
-      "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
-      "brand" : "Barilla",
-      "quantity" : 5,
-      "format" : 1000
-    }
   ]);
 
   private showSupermarketContainer: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);

@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ProductCardComponent } from './product-card.component';
+import { SharePopoverComponent } from './share-popover.component';
 
-describe('ProductCardComponent', () => {
-  let component: ProductCardComponent;
-  let fixture: ComponentFixture<ProductCardComponent>;
+describe('SharePopoverComponent', () => {
+  let component: SharePopoverComponent;
+  let fixture: ComponentFixture<SharePopoverComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductCardComponent ],
+      declarations: [ SharePopoverComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ProductCardComponent);
+    fixture = TestBed.createComponent(SharePopoverComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

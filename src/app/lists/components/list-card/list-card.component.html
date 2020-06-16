@@ -13,9 +13,9 @@
     </ion-item>
   </ion-card-header>
 
-  <ion-card-content [routerLink]="listOfCards.id" [queryParams]="{name: listOfCards.name}">
-
-    <div class="container content">
+  <ion-card-content>
+    <!--  passo il nome della lista nella query -->
+    <div class="container content" [routerLink]="listOfCards.id" [queryParams]="{ name: listOfCards.name }">
       <h1 class="child">{{listOfCards.name}}</h1>
 
       <ul class="container">
@@ -36,7 +36,7 @@
         </ion-avatar>
       </ion-item>
 
-      <ion-button slot="end">
+      <ion-button slot="end" (click)="presentPopover($event, listOfCards.id)">
         <ion-icon name="share-social"></ion-icon>
       </ion-button>
 
