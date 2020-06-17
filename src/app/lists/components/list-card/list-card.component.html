@@ -3,7 +3,7 @@
 
   <ion-card-header>
     <ion-item lines="none">
-      <ion-avatar slot="start">
+      <ion-avatar class="owner_avatar" slot="start">
         <img src="{{listOfCards.avatar}}"/>
       </ion-avatar>
 
@@ -28,8 +28,10 @@
       </ion-label>
 
 
+
+
       <ion-item lines="none" *ngFor="let user of listOfCards.users">
-        <ion-avatar slot="end">
+        <ion-avatar slot="end" class="users_avatar">
           <img src="{{user.avatar}}">
         </ion-avatar>
       </ion-item>
