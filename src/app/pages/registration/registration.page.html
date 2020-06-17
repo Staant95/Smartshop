@@ -30,6 +30,10 @@
 
 <ion-footer class="ion-no-border ion-margin-bottom">
     <div class="ion-margin" class="registration-button">
-        <ion-button size="medium" class="ion-margin" color="transparent" (click)="registration()" [disabled]="!registrationForm.valid">Registrami</ion-button>        
+        <ion-button size="medium" class="ion-margin" color="transparent" (click)="registration()" [disabled]="!registrationForm.valid">Registrami</ion-button>
+        <ion-item lines="none">
+            <a routerLink="/login">Torna alla login</a>
+        </ion-item>
     </div>
+
 </ion-footer>

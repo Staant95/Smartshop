@@ -8,7 +8,9 @@ ion-avatar{
   height:10em;
 }
 
-
+.registration-button{
+  display:flex; flex-direction: column; justify-content: center; height: 100%;
+}
 
 .title{
   font-family: shopie;
@@ -43,3 +45,4 @@ form {
 .registration-button{
   display:flex; flex-direction: column; justify-content: center; height: 100%;
 }
+
