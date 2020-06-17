@@ -3,15 +3,18 @@
 <ion-content>
     <div class="box-container">
         <ion-item lines="none">
-            <ion-avatar>
-                <img src="{{userAvatar}}" />
-            </ion-avatar>
+
+                <label for="file-upload" class="custom-file-upload">
+                    <ion-avatar>
+                        <img src="{{userAvatar}}" />
+                    </ion-avatar>
+                </label>
+                <input id="file-upload" type="file"/>
         </ion-item>
 
         <ion-item lines="none">
             <ion-label class="username">Mario Rossi</ion-label>
         </ion-item>
-
         <ion-item lines="none">
             <ion-label class="mail">mariorossi@mail.com</ion-label>
         </ion-item>

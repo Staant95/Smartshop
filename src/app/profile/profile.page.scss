@@ -42,3 +42,13 @@ a{
 .logout-button{
   display:flex; flex-direction: column; justify-content: center; height: 100%;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 0px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+}

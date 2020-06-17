@@ -21,6 +21,10 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
       this.storage.get('avatar').then(data => this.userAvatar = data);
   }
+    upload(str:any)
+    {
+
+    }
 
   logout() {
     //clear local storage
