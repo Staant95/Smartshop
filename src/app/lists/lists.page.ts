@@ -24,7 +24,7 @@ export class ListsPage implements OnInit {
     this.shoplists.getAll().subscribe(
         data => {
           this.lists = data;
-          if(data.length !== 0)
+          if(this.lists.length !== 0)
             this.listLength$.next(true);
         }
     );

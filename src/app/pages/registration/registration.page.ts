@@ -23,6 +23,10 @@ export class RegistrationPage implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(16)
       ]],
+      cognome: ['',[
+        Validators.required,
+        Validators.minLength(5)
+      ]],
       eta: ['',[
         Validators.required,
         Validators.min(6),
@@ -45,8 +49,6 @@ export class RegistrationPage implements OnInit {
         Validators.maxLength(20)
       ]]
     });
-
-
     
   }
 
