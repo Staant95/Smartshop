@@ -38,7 +38,7 @@ export class ShoplistComponent implements OnInit {
   }
 
   decreaseQuantity(product: Product) {
-    if (product.quantity > 0) {
+    if (product.quantity > 1) {
       this.spService.put(this.listId, product.quantity - 1 , product.id);
     }
   }
