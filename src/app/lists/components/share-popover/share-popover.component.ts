@@ -19,7 +19,8 @@ export class SharePopoverComponent implements OnInit {
   ngOnInit() {}
 
 
-  copyLink(link: string) {
+  copyLink(link) {
+    console.log(link);
 
   }
 }

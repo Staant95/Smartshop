@@ -1,2 +1,7 @@
-<ion-item #link>Il link dal server</ion-item>
+<ion-item >
+    <ion-input #link value="Link del server"></ion-input>
+
+    <ion-icon (click)="copyLink(link.value)" color="primary" slot="end" name="clipboard-outline"></ion-icon>
+
+</ion-item>
 <!-- <ion-button (click)="copyLink(link.innerText)">copy</ion-button> -->

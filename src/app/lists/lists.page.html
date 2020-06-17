@@ -15,11 +15,11 @@
     </app-list-card>
 
 
-<!--
-    <div *ngIf="!lists.length" class="box-container" >
+
+    <div *ngIf="!(listLength$ | async)" class="box-container" >
                 <ion-text color="secondary" class="ion-text-center empty-list-text">Non hai liste della spesa</ion-text>
         </div>
--->
+
 
 </ion-content>
 

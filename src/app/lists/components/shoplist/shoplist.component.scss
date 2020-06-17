@@ -31,6 +31,11 @@
 
 .distance-label{
   font-size:0.8em;
+  padding: 0;
+}
+
+.text-container {
+  padding: 0 !important;
 }
 
 .compare-button{
@@ -51,3 +56,10 @@
 .market-info-icon{
   color: var(--ion-color-tertiary);
 }
+
+.range-btn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
