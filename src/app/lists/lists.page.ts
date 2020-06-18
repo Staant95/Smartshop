@@ -52,6 +52,11 @@ export class ListsPage implements OnInit {
     popover.onDidDismiss().then(data => {
       if(data !== null){
         if(data !== 'undefined'){
+            // controlli se l'oggetto ha la chiave codice
+            // chiami il service che aggiunge l'utente alla lista
+            // con quel codice
+
+
           this.shoplists.save(data.data['listName']).subscribe(
               list => {
                 this.lists.push(list);
