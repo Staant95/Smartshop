@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {BehaviorSubject, Observable, of} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import { URL } from '../endpoints';
-import {catchError, map} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 import {StorageService} from "./storage.service";
 import {User} from "../models/User";
 
