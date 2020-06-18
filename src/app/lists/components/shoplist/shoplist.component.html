@@ -22,12 +22,12 @@
             <ion-item-sliding *ngFor="let product of products; let i = index">
                 <ion-item>
                     <ion-avatar slot="start">
-                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fcolor-svg-vector-icons-2%2F512%2Fadd_product_plus-512.png&f=1&nofb=1">
+                        <img src="{{product.avatar}}">
                     </ion-avatar>
                     <ion-text class="ion-padding">
                         <div>{{product.name}}</div>
                         <div class="product-info" >{{product.brand}}</div>
-                        <div class="product-info" >{{product.format}}</div>
+                        <div class="product-info" >{{product.weight}}</div>
                     </ion-text>
 
                     <div slot="end">

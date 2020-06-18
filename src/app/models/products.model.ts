@@ -3,6 +3,6 @@ export interface Product {
     avatar: string;
     name: string;
     brand: string;
-    format: number;
+    weight: number;
     pivot: object
 }
