@@ -8,7 +8,7 @@
         <img src="{{listOfCards.avatar}}"/>
 
       </ion-avatar>
-      <ion-label class="ion-margin-horizontal"> {{listOfCards.user}}</ion-label>
+      <ion-label class="ion-margin-horizontal"> {{listOfCards.created_by}} </ion-label>
 
         <ion-icon slot="end" color="primary" name="trash" (click)="deleteCard(listOfCards.id)"></ion-icon>
     </ion-item>
@@ -26,20 +26,17 @@
 
 
     <ion-item lines="none">
-      <ion-label slot="start" *ngIf="listOfCards.total">
-        {{listOfCards.total}} $
-      </ion-label>
+<!--      <ion-label slot="start" *ngIf="listOfCards.total">-->
+<!--        {{listOfCards.total}} $-->
+<!--      </ion-label>-->
 
-
-
-
-      <ion-item lines="none" *ngFor="let user of listOfCards.users">
-        <ion-avatar slot="end" class="users_avatar">
+      <ion-item class="ion-no-margin ion-no-padding" lines="none" *ngFor="let user of usersOfCard | async">
+        <ion-avatar slot="end" class="users_avatar ion-no-padding ion-no-margin">
           <img src="{{user.avatar}}">
         </ion-avatar>
       </ion-item>
 
-        <ion-icon name="share-social"  slot="end" (click)="presentPopover($event, listOfCards.id)"></ion-icon>
+      <ion-icon name="share-social"  slot="end" (click)="presentPopover($event)"></ion-icon>
 
     </ion-item>
 

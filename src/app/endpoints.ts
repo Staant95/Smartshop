@@ -6,5 +6,6 @@ export const URL = {
     products: 'http://localhost:8000/api/products',
     search: 'http://localhost:8000/api/search/',
     resetPassword: 'http://localhost:8000/api/reset-password',
-    addUser: 'http://localhost:8000/api/shoplists/user'
+    addUser: 'http://localhost:8000/api/shoplists/user',
+    usersOfCard: 'http://localhost:8000/api/shoplists/'
 }

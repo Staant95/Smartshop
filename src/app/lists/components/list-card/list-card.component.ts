@@ -3,6 +3,7 @@ import {NavController, PopoverController} from "@ionic/angular";
 import {SharePopoverComponent} from "../share-popover/share-popover.component";
 import {Storage} from "@ionic/storage";
 import {from, Observable} from "rxjs";
+import {UtentiListaService} from "../../../services/utenti-lista.service";
 
 @Component({
   selector: 'app-list-card',
@@ -13,19 +14,20 @@ export class ListCardComponent implements OnInit {
 
   @Input() listOfCards;
   @Output() cardId: EventEmitter<number> = new EventEmitter<number>();
-
+  usersOfCard: Observable<any>;
 
   constructor(
       private nav: NavController,
       private store: Storage,
-      private popoverController: PopoverController) { }
+      private popoverController: PopoverController,
+      private utentiLista: UtentiListaService ) { }
 
 
   ngOnInit() {
-    console.log(this.listOfCards)
+    this.usersOfCard = this.utentiLista.getAllUser(this.listOfCards.id);
   }
 
-  async presentPopover(event: any, listId: number) {
+  async presentPopover(event: any) {
     const popover = await this.popoverController.create({
       component: SharePopoverComponent,
       event,

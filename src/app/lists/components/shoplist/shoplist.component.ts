@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ShoplistProductService} from "../../../services/shoplist-product.service";
 import {BehaviorSubject, Observable} from "rxjs";
@@ -34,14 +34,17 @@ export class ShoplistComponent implements OnInit {
 
     this.spService.getAll(this.listId).subscribe(
         p => {
-          if(!p.length) this.productLength$.next(true);
           this.products = p
         }
     );
 
     this.productStore.getProductsObservable().subscribe(
         data => {
-          this.productLength$.next(true);
+            if(data !== null ) {
+                if(!data.length) this.productLength$.next(true);
+                console.log(data)
+            }
+
           if(data) this.products = data
         }
     );
@@ -63,9 +66,14 @@ export class ShoplistComponent implements OnInit {
 
 
   deleteProduct(product: Product, index: number) {
-    if(this.products.length) this.productLength$.next(false);
+
     this.spService.delete(this.listId, product.id).subscribe(
-        _ => this.products.splice(index,1)
+        _ => {
+          this.products.splice(index,1);
+          if(!this.products.length) {
+            this.productLength$.next(false);
+          }
+        }
     );
   }
 
@@ -77,12 +85,14 @@ export class ShoplistComponent implements OnInit {
   }
 
   doRefresh(event) {
-    console.log('Begin async operation');
 
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 500);
+      this.spService.getAll(this.listId).subscribe(
+          p => {
+            if(!p.length) this.productLength$.next(true);
+            this.products = p;
+            event.target.complete();
+          }
+      );
   }
 
 }
