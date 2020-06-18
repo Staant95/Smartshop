@@ -76,4 +76,13 @@ export class ShoplistComponent implements OnInit {
 
   }
 
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 500);
+  }
+
 }
