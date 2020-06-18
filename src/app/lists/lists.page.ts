@@ -3,6 +3,7 @@ import {ShoppingListService} from '../services/shopping-list.service';
 import { PopoverController} from '@ionic/angular';
 import {CreateCardPopoverComponent} from './components/create-card-popover/create-card-popover.component';
 import {BehaviorSubject} from 'rxjs';
+import {AddUserToShoplistService} from "../services/add-user-to-shoplist.service";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ListsPage implements OnInit {
 
   constructor(
       private shoplists: ShoppingListService,
-      private popoverCtrl: PopoverController
+      private popoverCtrl: PopoverController,
+      private addUserToList: AddUserToShoplistService
   ) { }
 
   ngOnInit() {
@@ -53,16 +55,17 @@ export class ListsPage implements OnInit {
     popover.onDidDismiss().then(data => {
       if (data !== null) {
         if (data['data'] !== undefined) {
-            // controlli se l'oggetto ha la chiave codice
-            // chiami il service che aggiunge l'utente alla lista
-            // con quel codice
 
-            let name = data["data"]["listName"];
+            let code = data["data"]["listName"];
 
-            if(name.length === 6 && name.charAt(0) === "#"){
-                // chiamo il servizio che aggiunge la lista all'utente
+            if(code.length === 6 && code.charAt(0) === "#"){
+
+                this.addUserToList.addUser(code).subscribe(
+                    data => this.lists.push(data)
+                );
+
             }else {
-                    this.shoplists.save(name).subscribe(
+                    this.shoplists.save(code).subscribe(
                         list => {
                             this.lists.push(list);
                             this.listLength$.next(true);

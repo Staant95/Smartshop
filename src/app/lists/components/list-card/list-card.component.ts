@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NavController, PopoverController} from "@ionic/angular";
 import {SharePopoverComponent} from "../share-popover/share-popover.component";
+import {Storage} from "@ionic/storage";
+import {from, Observable} from "rxjs";
 
 @Component({
   selector: 'app-list-card',
@@ -12,13 +14,15 @@ export class ListCardComponent implements OnInit {
   @Input() listOfCards;
   @Output() cardId: EventEmitter<number> = new EventEmitter<number>();
 
+
   constructor(
       private nav: NavController,
+      private store: Storage,
       private popoverController: PopoverController) { }
 
 
   ngOnInit() {
-
+    console.log(this.listOfCards)
   }
 
   async presentPopover(event: any, listId: number) {
