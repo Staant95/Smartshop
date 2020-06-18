@@ -12,6 +12,22 @@
   font-family: handlee;
   font-size:1.5em;
 }
+
+.owner_avatar{
+  height: 2.2em;
+  width:2.2em;
+  background-color: #ddd;
+}
+
+.users_avatar{
+  margin-left:-0.3em;
+  border: 1px solid var(--ion-color-secondary);
+}
+.users_avatar:first-of-type{
+  margin-left:0em;
+  border: 1px solid var(--ion-color-secondary);
+}
+
 ion-avatar{
   margin:0.1em; height: 1.5em; width:1.5em;
 }

@@ -10,8 +10,13 @@
 }
 
 .box-container{
-  display:flex; flex-direction: column; justify-content: center; height: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
 }
+
 
 .empty-list-text{
   font-family: handlee;
