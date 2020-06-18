@@ -15,7 +15,7 @@ export class CreateCardPopoverComponent implements OnInit {
 
   async onSubmit(listName: string) {
     if(listName.trim() === "") await this.popoverCtrl.dismiss();
-
+    // logica per determinare se e' un codice o nome card
     await this.popoverCtrl.dismiss({
       "listName" : listName
     });
