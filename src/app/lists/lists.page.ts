@@ -52,24 +52,22 @@ export class ListsPage implements OnInit {
 
     popover.onDidDismiss().then(data => {
       if (data !== null) {
-        if (data !== 'undefined') {
+        if (data['data'] !== undefined) {
             // controlli se l'oggetto ha la chiave codice
             // chiami il service che aggiunge l'utente alla lista
             // con quel codice
 
-            var name = data["data"];
-            name =  (name["listName"]).replace(/"([^"]+)":/g, '$1:');
-            // tslint:disable-next-line:triple-equals
-            if ( name.length == 6 && name.charAt(0) == '#') {
-                // tslint:disable-next-line:prefer-const
+            let name = data["data"]["listName"];
 
-            } else {
-                this.shoplists.save(data.data.listName).subscribe(
-                    list => {
-                        this.lists.push(list);
-                        this.listLength$.next(true);
-                    }
-                );
+            if(name.length === 6 && name.charAt(0) === "#"){
+                // chiamo il servizio che aggiunge la lista all'utente
+            }else {
+                    this.shoplists.save(name).subscribe(
+                        list => {
+                            this.lists.push(list);
+                            this.listLength$.next(true);
+                        }
+                    );
             }
         }
       }

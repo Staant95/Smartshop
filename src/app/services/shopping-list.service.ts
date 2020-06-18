@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import { URL } from '../endpoints';
-import {Observable} from "rxjs";
-import {Product} from "../models/products.model";
 
 @Injectable({
   providedIn: 'root'

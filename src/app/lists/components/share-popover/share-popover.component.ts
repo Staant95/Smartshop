@@ -12,8 +12,7 @@ export class SharePopoverComponent implements OnInit {
   @Input() props;
 
   constructor(private nav: NavParams) {
-    this.props = nav.get('listId');
-    console.log(this.props)
+    this.props = nav.get('code');
   }
 
   ngOnInit() {}
@@ -21,6 +20,5 @@ export class SharePopoverComponent implements OnInit {
 
   copyLink(link) {
     console.log(link);
-
   }
 }

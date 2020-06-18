@@ -17,8 +17,6 @@ export class ListCardComponent implements OnInit {
       private popoverController: PopoverController) { }
 
 
-
-
   ngOnInit() {
 
   }
@@ -28,7 +26,7 @@ export class ListCardComponent implements OnInit {
       component: SharePopoverComponent,
       event,
       translucent: true,
-      componentProps: {'listId' : listId }
+      componentProps: {'code' : this.listOfCards['share-code'] }
     });
     return await popover.present();
   }
