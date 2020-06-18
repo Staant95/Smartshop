@@ -19,12 +19,12 @@
             <ion-col>
                 <ion-item >
                     <ion-avatar slot="start">
-                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                        <img src="{{product['avatar']}}">
                     </ion-avatar>
                     <ion-text class="ion-padding">
                         <div>{{product.name}}</div>
-                        <div class="product-info" >{{product.brand}}</div>
-                        <div class="product-info" >{{product.format}}</div>
+                        <div class="product-info" >{{product['brand']}}</div>
+                        <div class="product-info" >{{product.weight}}</div>
                     </ion-text>
 
                         <ion-icon (click)="addToList(product)" class="cart-icon" name="cart-outline" color="primary" slot="end"></ion-icon>

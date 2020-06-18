@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TypeAheadService} from "../../../services/type-ahead.service";
 import {Observable, Subject} from "rxjs";
-import {debounceTime, distinctUntilChanged, filter, switchMap} from "rxjs/operators";
+import {debounceTime, distinctUntilChanged, switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
 import {ShoplistProductService} from "../../../services/shoplist-product.service";
 
