@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import {UserResolverService} from "../services/resolvers/user-resolver.service";
+import {AuthGuard} from "../guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -11,12 +12,12 @@ const routes: Routes = [
       {
         path: 'lists',
         loadChildren: () => import('../lists/lists.module').then(m => m.ListsPageModule),
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
       },
       {
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule),
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         resolve: { user : UserResolverService }
       },
       {

@@ -14,6 +14,7 @@ export class ProfilePage implements OnInit {
 
   user: User;
   data: any;
+
   constructor(
       private router: Router,
       private activatedRoute: ActivatedRoute,
@@ -22,12 +23,8 @@ export class ProfilePage implements OnInit {
       private storageService: StorageService) { }
 
   ngOnInit() {
-      this.data = this.activatedRoute.data.
-      subscribe(data => this.user = data.user)
+      this.data = this.activatedRoute.data.subscribe(data => this.user = data.user)
   }
-    upload(str:any){
-
-    }
 
   logout() {
     //clear local storage

@@ -38,7 +38,10 @@ export class PasswordResetPage implements OnInit {
 
   resetPassword() {
       this.resetPasswordService.resetPassword(this.resetForm.value).subscribe(
-          _ => this.router.navigateByUrl('/login')
+          _ => {
+            this.resetForm.reset();
+            this.router.navigateByUrl('/login');
+          }
       );
   }
 

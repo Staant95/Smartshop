@@ -30,7 +30,7 @@
     <div class="ion-margin" class="registration-button">
         <ion-button size="medium" class="ion-margin" color="transparent" (click)="registration()" [disabled]="!registrationForm.valid">Registrami</ion-button>
         <ion-item lines="none">
-            <a routerLink="/login">Torna alla login</a>
+            <a routerLink="/login" (click)="registrationForm.reset()">Torna alla login</a>
         </ion-item>
     </div>
 

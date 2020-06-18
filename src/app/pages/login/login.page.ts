@@ -49,8 +49,9 @@ export class LoginPage implements OnInit {
     this.loginService.login(this.loginForm.value)
       .subscribe(
          data => {
-           console.log(data)
-          this.nav.navigateByUrl(this.url)
+           console.log(data);
+           this.loginForm.reset();
+          this.nav.navigateByUrl(this.url);
         });
   }
 

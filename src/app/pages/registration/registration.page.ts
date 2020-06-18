@@ -51,7 +51,10 @@ export class RegistrationPage implements OnInit {
   registration() {
     let newObj= delete this.registrationForm.value['conf_password'];
     this.registrationService.register(this.registrationForm.value).subscribe(
-        _ => this.router.navigateByUrl('/login')
+        _ => {
+          this.registrationForm.reset();
+          this.router.navigateByUrl('/login')
+        }
     );
   }
 }
