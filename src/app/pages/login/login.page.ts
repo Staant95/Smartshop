@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from "../../services/login.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {Storage} from "@ionic/storage";
 
 @Component({
   selector: 'app-login',
@@ -49,11 +48,11 @@ export class LoginPage implements OnInit {
   login() {
     this.loginService.login(this.loginForm.value)
       .subscribe(
-         () => {
+         data => {
+           console.log(data)
           this.nav.navigateByUrl(this.url)
-        }
-      );
-
-
+        });
   }
+
+
 }

@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Storage} from "@ionic/storage";
 import {LoginService} from "../services/login.service";
 import {StorageService} from "../services/storage.service";
+import {User} from "../models/User";
 
 @Component({
   selector: 'app-profile',
@@ -10,19 +11,21 @@ import {StorageService} from "../services/storage.service";
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  userAvatar: string;
 
+  user: User;
+  data: any;
   constructor(
       private router: Router,
+      private activatedRoute: ActivatedRoute,
       private storage: Storage,
       private loginService: LoginService,
       private storageService: StorageService) { }
 
   ngOnInit() {
-      this.storage.get('avatar').then(data => this.userAvatar = data);
+      this.data = this.activatedRoute.data.
+      subscribe(data => this.user = data.user)
   }
-    upload(str:any)
-    {
+    upload(str:any){
 
     }
 

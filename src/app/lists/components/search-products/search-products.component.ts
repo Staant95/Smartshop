@@ -4,8 +4,10 @@ import {Observable, Subject} from "rxjs";
 import {debounceTime, distinctUntilChanged, filter, switchMap} from "rxjs/operators";
 import {ActivatedRoute} from "@angular/router";
 import {ShoplistProductService} from "../../../services/shoplist-product.service";
-import {ProductNames} from "../../../models/ProductNames.model";
+
 import {ToastController} from "@ionic/angular";
+import {Product} from "../../../models/products.model";
+import {ProductStoreService} from "../../../services/product-store.service";
 
 @Component({
   selector: 'app-search-products',
@@ -16,17 +18,18 @@ export class SearchProductsComponent implements OnInit {
 
   listId: number;
   private searchedProduct = new Subject<string>();
-  products$: Observable<ProductNames[]>;
+  products$: Observable<Product>;
 
   constructor(
       private searchService: TypeAheadService,
       private router: ActivatedRoute,
       private spService: ShoplistProductService,
-      private toastController: ToastController
+      private toastController: ToastController,
+      private productStore: ProductStoreService
   ) { }
 
 
-  async presentToast(product: ProductNames) {
+  async presentToast(product: Product) {
     const toast = await this.toastController.create({
       message: `${product.name} e' stato aggiunto alla tua lista!`,
       duration: 1000,
@@ -35,7 +38,6 @@ export class SearchProductsComponent implements OnInit {
     });
     await toast.present();
   }
-
 
   ngOnInit() {
 
@@ -56,16 +58,10 @@ export class SearchProductsComponent implements OnInit {
     this.searchedProduct.next(product);
   }
 
-  addToList(product: ProductNames) {
-
-      this.spService.post({
-        "id" : product.id,
-        "name" : product.name,
-        "format" : product.format,
-        "avatar" : "https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png",
-        "quantity" : 1,
-        "brand" : product.brand
-      });
+  addToList(product: Product) {
+      this.spService.save(this.listId, product.id).subscribe(
+          p => this.productStore.pushProduct(p)
+      );
       this.presentToast(product);
   }
 

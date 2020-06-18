@@ -4,15 +4,5 @@ export interface Product {
     name: string;
     brand: string;
     format: number;
-    quantity: number;
+    pivot: object
 }
-
-// {
-//     "id" : 2,
-//     "name" : "kiwi",
-//     "avatar" : "",
-//     "brand" : "Barilla",
-//     "quantity" : 1,
-//     "format" : "500",
-//     "weight" : 700
-// }

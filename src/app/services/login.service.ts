@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, Observable, of} from "rxjs";
 import { URL } from '../endpoints';
-import { map } from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import {StorageService} from "./storage.service";
+import {User} from "../models/User";
 
 export interface Credentials {
   email: string;
@@ -23,23 +24,18 @@ export class LoginService {
       private storageService: StorageService
       ) { }
 
-    login(credentials: Credentials): Observable<any> {
-      //dev'essere POST, ma con json-server usare il post inserirebbe un nuovo utente con le credenziali che passo
-      //come parametro alla funzione login
+    login(credentials: Credentials): Observable<User> {
 
-        return this.http.get(URL.login).pipe(
+        return this.http.post<User>(URL.login, credentials).pipe(
             map((response) => {
-
                 if(response['token'].trim() !== '' && response['token'] !== null) {
 
-                    //this.storageService.save({...response}).subscribe( _ => this.isLogged$.next(true));
                     this.storageService.save(
                         {
                           'name' : response['name'],
                           'email' : response['email'],
                           'token' : response['token'],
-                          'avatar' : response['avatar'],
-                          'id': response['id']
+                          'avatar' : response['avatar']
                         }).subscribe(_ => this.isLogged$.next(true));
 
                     return response;
@@ -54,7 +50,6 @@ export class LoginService {
   isLogged(): Observable<boolean> {
     return this.isLogged$.asObservable();
   }
-
 
 
 }

@@ -6,13 +6,6 @@
 
         <ion-title>{{listName}}</ion-title>
 
-        <!--
-        <ion-item slot="end" lines="none">
-            <ion-icon name="add" color="primary"></ion-icon>
-        </ion-item>
-        -->
-
-
     </ion-toolbar>
 </ion-header>
 
@@ -21,12 +14,11 @@
 <ion-content>
 
 <ion-list>
-    <ion-item-sliding *ngFor="let product of products$ | async; let i = index">
-
+    <ion-item-sliding *ngFor="let product of products; let i = index">
 
         <ion-item>
             <ion-avatar slot="start">
-                <img src="{{product.avatar}}">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fcolor-svg-vector-icons-2%2F512%2Fadd_product_plus-512.png&f=1&nofb=1">
             </ion-avatar>
             <ion-text class="ion-padding">
                 <div>{{product.name}}</div>
@@ -39,7 +31,7 @@
                     <ion-icon name="chevron-up-outline"class="up-row-icon" (click)="increaseQuantity(product)"></ion-icon>
                 </div>
                 <div>
-                    <label #quantity class="ion-text-center" class="counter-label" >{{product.quantity}}</label>
+                    <label #quantity class="ion-text-center" class="counter-label" >{{product.pivot['quantity']}}</label>
                 </div>
                 <div class="ion-text-center" class="down-row-container">
                     <ion-icon name="chevron-down-outline" class="down-row-icon" (click)="decreaseQuantity(product)"></ion-icon>
@@ -47,7 +39,7 @@
             </div>
         </ion-item>
 
-        <ion-item-options side="end" (click)="deleteProduct(product.id)">
+        <ion-item-options side="end" (click)="deleteProduct(product, i)">
             <ion-item-option>
                 <ion-icon slot="icon-only" name="trash"></ion-icon>
             </ion-item-option>
@@ -67,8 +59,9 @@
 
 </ion-content>
 
-<ion-footer *ngIf="(products$ | async).length">
-    <div *ngIf="(compareSupermarketsBtn$ | async); else showSupermarket">
+
+<ion-footer *ngIf="(productLength$ | async)">
+    <div *ngIf="(supermarketBtnState$ | async); else showSupermarket">
         <ion-item lines="none" class="text-container">
             <ion-label class="distance-label" class="ion-text-center " color="tertiary">Distanza supermercato</ion-label>
         </ion-item>
@@ -97,7 +90,7 @@
                 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.gofreedownload.net%2Fconad-117103.jpg&f=1&nofb=1">
             </ion-avatar>
             <ion-text class="ion-padding">
-                <div  >{{supermarket.name}}</div>
+                <div  >{{supermarket['name']}}</div>
                 <div class="market-info"> <ion-icon name="location-outline" class="market-info-icon" ></ion-icon> {{supermarket.city}} - {{supermarket.location}}</div>
                 <div class="market-info"> <ion-icon name="wallet-outline"  class="market-info-icon" ></ion-icon> {{supermarket.total}} €</div>
             </ion-text>

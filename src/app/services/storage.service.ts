@@ -8,8 +8,6 @@ import { map, mergeAll } from "rxjs/operators";
 })
 export class StorageService {
 
-  private tempArrayOfObservables = [];
-
   constructor(private storage: Storage) { }
 
   save(items: object): Observable<any> {

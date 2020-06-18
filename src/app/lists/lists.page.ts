@@ -52,7 +52,7 @@ export class ListsPage implements OnInit {
     popover.onDidDismiss().then(data => {
       if(data !== null){
         if(data !== 'undefined'){
-          this.shoplists.create(data.data['listName']).subscribe(
+          this.shoplists.save(data.data['listName']).subscribe(
               list => {
                 this.lists.push(list);
                 this.listLength$.next(true);

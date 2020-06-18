@@ -1,22 +1,20 @@
-
-
 <ion-content>
     <div class="box-container">
         <ion-item lines="none">
 
                 <label for="file-upload" class="custom-file-upload">
                     <ion-avatar>
-                        <img src="{{userAvatar}}" />
+                        <img src="{{user.avatar}}" />
                     </ion-avatar>
                 </label>
                 <input id="file-upload" type="file"/>
         </ion-item>
 
         <ion-item lines="none">
-            <ion-label class="username">Mario Rossi</ion-label>
+            <ion-label class="username">{{user.name}}</ion-label>
         </ion-item>
         <ion-item lines="none">
-            <ion-label class="mail">mariorossi@mail.com</ion-label>
+            <ion-label class="mail">{{user.email}}</ion-label>
         </ion-item>
         <div class="ion-margin">
             <ion-item lines="none">
@@ -25,7 +23,7 @@
             </ion-item>
             <ion-item lines="none">
                 <ion-text class="notifiche-liste">Notifiche sulle liste</ion-text>
-                <ion-toggle #liste slot="end" (ionChange)="setNotificheOfferte(liste.checked)"></ion-toggle>
+                <ion-toggle #liste slot="end" (ionChange)="setNotificheListe(liste.checked)"></ion-toggle>
             </ion-item>
         </div>
 

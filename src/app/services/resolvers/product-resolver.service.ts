@@ -6,11 +6,11 @@ import {ShoplistProductService} from "../shoplist-product.service";
 @Injectable({
   providedIn: 'root'
 })
-export class ProductResolverService implements Resolve<any>{
+export class ProductResolverService implements Resolve<any> {
 
   constructor(private spService: ShoplistProductService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-    return this.spService.get(parseInt(route.paramMap.get('id')));
+    return this.spService.getAll(parseInt(route.paramMap.get('id')));
   }
 }

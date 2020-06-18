@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NavController, PopoverController} from "@ionic/angular";
 import {SharePopoverComponent} from "../share-popover/share-popover.component";
 
@@ -7,7 +7,7 @@ import {SharePopoverComponent} from "../share-popover/share-popover.component";
   templateUrl: './list-card.component.html',
   styleUrls: ['./list-card.component.scss'],
 })
-export class ListCardComponent implements OnInit, AfterViewInit {
+export class ListCardComponent implements OnInit {
 
   @Input() listOfCards;
   @Output() cardId: EventEmitter<number> = new EventEmitter<number>();
@@ -17,9 +17,7 @@ export class ListCardComponent implements OnInit, AfterViewInit {
       private popoverController: PopoverController) { }
 
 
-  ngAfterViewInit() {
-    console.log(this.listOfCards);
-  }
+
 
   ngOnInit() {
 

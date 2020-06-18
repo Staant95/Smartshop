@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {UserResolverService} from "../services/resolvers/user-resolver.service";
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
       {
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule),
-        // canActivate: [AuthGuard]
+        // canActivate: [AuthGuard],
+        resolve: { user : UserResolverService }
       },
       {
         path: '',

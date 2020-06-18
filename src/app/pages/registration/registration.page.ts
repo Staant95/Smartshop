@@ -18,19 +18,14 @@ export class RegistrationPage implements OnInit {
 
   ngOnInit() {
     this.registrationForm = this.fb.group({
-      nome: ['', [
+      name: ['', [
         Validators.required, 
         Validators.minLength(3),
         Validators.maxLength(16)
       ]],
-      cognome: ['',[
+      lastname: ['',[
         Validators.required,
         Validators.minLength(5)
-      ]],
-      eta: ['',[
-        Validators.required,
-        Validators.min(6),
-        Validators.max(99)
       ]],
       email: ['', [
         Validators.required,
@@ -55,9 +50,6 @@ export class RegistrationPage implements OnInit {
 
   registration() {
     let newObj= delete this.registrationForm.value['conf_password'];
-    // default values for json-server
-    this.registrationForm.value['avatar'] = 'https://cdn1.iconfinder.com/data/icons/people-cultures/512/_indian_man-512.png';
-    this.registrationForm.value['token'] = '23asdl12oiasdasdqw';
     this.registrationService.register(this.registrationForm.value).subscribe(
         _ => this.router.navigateByUrl('/login')
     );

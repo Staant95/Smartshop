@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {ResetPasswordService} from "../../services/reset-password.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-password-reset',
@@ -13,7 +14,8 @@ export class PasswordResetPage implements OnInit {
   
   constructor(
       private fb: FormBuilder,
-      private resetPasswordService: ResetPasswordService) { }
+      private resetPasswordService: ResetPasswordService,
+      private router: Router) { }
 
   ngOnInit() {
     this.resetForm = this.fb.group({
@@ -35,7 +37,9 @@ export class PasswordResetPage implements OnInit {
   }
 
   resetPassword() {
-      this.resetPasswordService.resetPassword(this.resetForm.value).subscribe(console.log);
+      this.resetPasswordService.resetPassword(this.resetForm.value).subscribe(
+          _ => this.router.navigateByUrl('/login')
+      );
   }
 
 }

@@ -1,8 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ShoplistProductService} from "../../../services/shoplist-product.service";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Product} from "../../../models/products.model";
+import {ProductStoreService} from "../../../services/product-store.service";
 
 @Component({
   selector: 'app-shoplist',
@@ -11,49 +12,68 @@ import {Product} from "../../../models/products.model";
 })
 export class ShoplistComponent implements OnInit {
 
-  products$: Observable<Product[]>;
-  compareSupermarketsBtn$: BehaviorSubject<boolean>;
+  supermarketBtnState$: BehaviorSubject<boolean>;
+  productLength$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   listId: number;
   listName: string;
   bestSupermarket$: Observable<any>;
+  products: Product[];
 
   constructor(
       private route: ActivatedRoute,
-      private spService: ShoplistProductService
+      private spService: ShoplistProductService,
+      private productStore: ProductStoreService
   ) { }
 
   ngOnInit() {
-    this.products$ = this.spService.get(this.listId);
     this.route.paramMap.subscribe(params => {
       this.listId = parseInt(params.get('id'));
     });
-    this.route.queryParams.subscribe(q => this.listName = q.name)
-    this.compareSupermarketsBtn$ = this.spService.getSupermarketState();
+    this.route.queryParams.subscribe(q => this.listName = q.name);
+    this.supermarketBtnState$ = this.spService.getSupermarketBtnState();
+
+    this.spService.getAll(this.listId).subscribe(
+        p => {
+          if(!p.length) this.productLength$.next(true);
+          this.products = p
+        }
+    );
+
+    this.productStore.getProductsObservable().subscribe(
+        data => {
+          this.productLength$.next(true);
+          if(data) this.products = data
+        }
+    );
+
   }
 
   increaseQuantity(product: Product) {
-    if (product.quantity < 9) {
-      this.spService.put(this.listId, product.quantity + 1, product.id);
-    }
+    product.pivot['quantity'] += 1;
+    this.spService.updateQuantity(this.listId, product.id, product.pivot['quantity'])
+        .subscribe();
+
   }
 
   decreaseQuantity(product: Product) {
-    if (product.quantity > 1) {
-      this.spService.put(this.listId, product.quantity - 1 , product.id);
-    }
+    product.pivot['quantity'] -= 1;
+    this.spService.updateQuantity(this.listId, product.id, product.pivot['quantity'])
+        .subscribe();
   }
 
 
-  deleteProduct(productId: number) {
-    this.spService.delete(productId)
+  deleteProduct(product: Product, index: number) {
+    if(this.products.length) this.productLength$.next(false);
+    this.spService.delete(this.listId, product.id).subscribe(
+        _ => this.products.splice(index,1)
+    );
   }
-
 
   compareSupermarket(distanza: number) {
     console.log(distanza)
-    this.compareSupermarketsBtn$.next(false);
+    this.supermarketBtnState$.next(false);
     this.bestSupermarket$ = this.spService.findBestSupermarket(1)
-  }
 
+  }
 
 }
