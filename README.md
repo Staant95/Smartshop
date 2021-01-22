@@ -1,4 +1,2 @@
-```
-npm install
-```
+## Smartshop app written using Ionic framework
 
